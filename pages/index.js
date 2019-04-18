@@ -2,12 +2,14 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import Link from 'next/link';
+import { Button } from 'semantic-ui-react';
 import Layout from '../components/MyLayout';
+import './node_modules/semantic-ui-css/semantic.min.css';
 
 const PostLink = props => (
   <li>
     <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
-      <a>{props.title}</a>
+      <Button secondary>{props.title}</Button>
     </Link>
   </li>
 );
@@ -24,3 +26,12 @@ export default function Blog() {
     </Layout>
   );
 }
+
+// import Home from '../components/Home';
+
+
+// export default function Main() {
+//   return (
+//     <Home />
+//   );
+// }
