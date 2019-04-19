@@ -43,7 +43,7 @@ var HomepageHeading = function HomepageHeading(_ref) {
     text: true
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
     as: "h1",
-    content: "Imagine-a-Company",
+    content: "Mr. Toefl",
     inverted: true,
     style: {
       fontSize: mobile ? '2em' : '4em',
@@ -53,7 +53,7 @@ var HomepageHeading = function HomepageHeading(_ref) {
     }
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
     as: "h2",
-    content: "Do whatever you want when you want to.",
+    content: "Educaci\xF3n en Ingl\xE9s Especializada",
     inverted: true,
     style: {
       fontSize: mobile ? '1.5em' : '1.7em',
@@ -61,9 +61,9 @@ var HomepageHeading = function HomepageHeading(_ref) {
       marginTop: mobile ? '0.5em' : '1.5em'
     }
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
-    primary: true,
+    color: "yellow",
     size: "huge"
-  }, "Get Started", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Icon"], {
+  }, "Comenzar", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Icon"], {
     name: "right arrow"
   })));
 };
@@ -113,6 +113,7 @@ function (_React$Component) {
         onBottomPassedReverse: this.hideFixedMenu
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Segment"], {
         inverted: true,
+        color: "blue",
         textAlign: "center",
         style: {
           minHeight: 700,
@@ -120,33 +121,35 @@ function (_React$Component) {
         },
         vertical: true
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"], {
+        inverted: true,
         fixed: fixed ? 'top' : null,
-        inverted: !fixed,
         pointing: !fixed,
         secondary: !fixed,
         size: "large"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Container"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         as: "a",
         active: true
-      }, "Home"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+      }, "Inicio"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         as: "a"
-      }, "Work"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+      }, "Lecciones"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         as: "a"
-      }, "Company"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+      }, "Pr\xE1cticas"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         as: "a"
-      }, "Careers"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+      }, "Planes"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         position: "right"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
         as: "a",
-        inverted: !fixed
-      }, "Log in"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
+        inverted: fixed,
+        color: "blue"
+      }, "Ingresa"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
         as: "a",
-        inverted: !fixed,
+        inverted: fixed,
+        color: "blue",
         primary: fixed,
         style: {
           marginLeft: '0.5em'
         }
-      }, "Sign Up")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(HomepageHeading, null))), children);
+      }, "Reg\xEDstrate")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(HomepageHeading, null))), children);
     }
   }]);
 
@@ -189,20 +192,21 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         as: "a",
         active: true
-      }, "Home"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+      }, "Inicio"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         as: "a"
-      }, "Work"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+      }, "Lecciones"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         as: "a"
-      }, "Company"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+      }, "Pr\xE1cticas"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         as: "a"
-      }, "Careers"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+      }, "Planes"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         as: "a"
-      }, "Log in"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+      }, "Ingresa"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         as: "a"
-      }, "Sign Up")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Sidebar"].Pusher, {
+      }, "Reg\xEDstrate")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Sidebar"].Pusher, {
         dimmed: sidebarOpened
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Segment"], {
         inverted: true,
+        color: "blue",
         textAlign: "center",
         style: {
           minHeight: 350,
@@ -222,14 +226,14 @@ function (_Component) {
         position: "right"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
         as: "a",
-        inverted: true
-      }, "Log in"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
+        color: "blue"
+      }, "Ingresa"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
         as: "a",
-        inverted: true,
+        color: "blue",
         style: {
           marginLeft: '0.5em'
         }
-      }, "Sign Up")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(HomepageHeading, {
+      }, "Reg\xEDstrate")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(HomepageHeading, {
         mobile: true
       })), children));
     }
@@ -260,32 +264,32 @@ var HomepageLayout = function HomepageLayout() {
     style: {
       fontSize: '2em'
     }
-  }, "We Help Companies and Companions"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+  }, "Garantiza tu buen desempe\xF1o en el Toefl"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
     style: {
       fontSize: '1.33em'
     }
-  }, "We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs... through pure data analytics."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
+  }, "Texto --- S\xE1bete, Sancho, que no es un hombre m\xE1s que otro si no hace m\xE1s que otro. Todas estas borrascas que nos suceden son se\xF1ales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
     as: "h3",
     style: {
       fontSize: '2em'
     }
-  }, "We Make Bananas That Can Dance"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+  }, "Obt\xE9n planes a tu medida"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
     style: {
       fontSize: '1.33em'
     }
-  }, "Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Grid"].Column, {
+  }, "Texto --- Porque no es posible que el mal ni el bien sean durables, y de aqu\xED se sigue que, habiendo durado mucho el mal.")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Grid"].Column, {
     floated: "right",
     width: 6
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Image"], {
     bordered: true,
     rounded: true,
     size: "large",
-    src: "/images/wireframe/white-image.png"
+    src: "https://browardcollegeblog.com/wp-content/uploads/2015/10/ETS_TOEFL_Authorized_Test_Center.jpg"
   }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Grid"].Row, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Grid"].Column, {
     textAlign: "center"
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
     size: "huge"
-  }, "Check Them Out"))))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Segment"], {
+  }, "Revisa nuestros planes"))))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Segment"], {
     style: {
       padding: '0em'
     },
@@ -301,16 +305,19 @@ var HomepageLayout = function HomepageLayout() {
       paddingBottom: '5em',
       paddingTop: '5em'
     }
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Image"], {
+    avatar: true,
+    src: "https://www.ibts.org/wp-content/uploads/2017/08/iStock-476085198.jpg"
+  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
     as: "h3",
     style: {
       fontSize: '2em'
     }
-  }, "\"What a Company\""), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+  }, "\"Obtuve incre\xEDbles resultados\""), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
     style: {
       fontSize: '1.33em'
     }
-  }, "That is what they all say about us")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Grid"].Column, {
+  }, "\xC1lvaro Alvarez")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Grid"].Column, {
     style: {
       paddingBottom: '5em',
       paddingTop: '5em'
@@ -320,14 +327,14 @@ var HomepageLayout = function HomepageLayout() {
     style: {
       fontSize: '2em'
     }
-  }, "\"I shouldn't have gone with their competitor.\""), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+  }, "\"Excelente programa!\""), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
     style: {
       fontSize: '1.33em'
     }
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Image"], {
     avatar: true,
-    src: "/images/avatar/large/nan.jpg"
-  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("b", null, "Nan"), ' ', "Chief Fun Officer Acme Toys"))))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Segment"], {
+    src: "https://www.ibts.org/wp-content/uploads/2017/08/iStock-476085198.jpg"
+  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("b", null, "Ing."), ' ', "Marco Marquez"))))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Segment"], {
     style: {
       padding: '8em 0em'
     },
@@ -339,14 +346,11 @@ var HomepageLayout = function HomepageLayout() {
     style: {
       fontSize: '2em'
     }
-  }, "Breaking The Grid, Grabs Your Attention"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+  }, "M\xE1s datos positivos, llamar la atenci\xF3n"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
     style: {
       fontSize: '1.33em'
     }
-  }, "Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
-    as: "a",
-    size: "large"
-  }, "Read More"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Divider"], {
+  }, "Texto de descripci\xF3n --- Todas estas borrascas que nos suceden son se\xF1ales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aqu\xED se sigue que, habiendo durado mucho el mal, el bien est\xE1 ya cerca."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Divider"], {
     as: "h4",
     className: "header",
     horizontal: true,
@@ -356,19 +360,19 @@ var HomepageLayout = function HomepageLayout() {
     }
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
     href: "#"
-  }, "Case Studies")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
+  }, "M\xE1s informaci\xF3n")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
     as: "h3",
     style: {
       fontSize: '2em'
     }
-  }, "Did We Tell You About Our Bananas?"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+  }, "\xBFPor qu\xE9 usar MrToefl?"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
     style: {
       fontSize: '1.33em'
     }
-  }, "Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but it's really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
+  }, "Texto de descripci\xF3n --- Y, vi\xE9ndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: S\xE1bete, Sancho, que no es un hombre m\xE1s que otro si no hace m\xE1s que otro."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
     as: "a",
     size: "large"
-  }, "I'm Still Quite Interested"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Segment"], {
+  }, "Ver los Planes"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Segment"], {
     inverted: true,
     vertical: true,
     style: {
@@ -383,41 +387,22 @@ var HomepageLayout = function HomepageLayout() {
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
     inverted: true,
     as: "h4",
-    content: "About"
+    content: "Servicios"
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"], {
     link: true,
     inverted: true
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"].Item, {
     as: "a"
-  }, "Sitemap"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"].Item, {
+  }, "FAQ"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"].Item, {
     as: "a"
-  }, "Contact Us"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"].Item, {
+  }, "Contactos"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"].Item, {
     as: "a"
-  }, "Religious Ceremonies"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"].Item, {
-    as: "a"
-  }, "Gazebo Plans"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Grid"].Column, {
-    width: 3
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
-    inverted: true,
-    as: "h4",
-    content: "Services"
-  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"], {
-    link: true,
-    inverted: true
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"].Item, {
-    as: "a"
-  }, "Banana Pre-Order"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"].Item, {
-    as: "a"
-  }, "DNA FAQ"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"].Item, {
-    as: "a"
-  }, "How To Access"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["List"].Item, {
-    as: "a"
-  }, "Favorite X-Men"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Grid"].Column, {
+  }, "Acerca del Toefl"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Grid"].Column, {
     width: 7
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
     as: "h4",
     inverted: true
-  }, "Footer Header"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "Extra space for a call to action inside the footer that could help re-engage users.")))))));
+  }, "Desarrollo"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "dev.vrodriguez@gmail.com")))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomepageLayout);
