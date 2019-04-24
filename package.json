@@ -7,7 +7,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
-    "build-semantic": "cd semantic && gulp build-css build-assets",
+    "build-semantic": "cd semantic && gulp build-css build-assets && cp -rf dist/semantic.min.css ../static/",
     "watch-semantic": "cd semantic && npm run build-semantic && gulp watch"
   },
   "keywords": [],

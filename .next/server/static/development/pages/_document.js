@@ -2254,7 +2254,7 @@ function (_Document) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("html", null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_9__["Head"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
-        href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css",
+        href: "./static/semantic.min.css",
         rel: "stylesheet"
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("body", {
         className: "custom_class"

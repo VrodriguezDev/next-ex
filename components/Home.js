@@ -23,16 +23,11 @@ import {
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
-    <Header
-      as="h1"
-      content="Mr. Toefl"
-      inverted
-      style={{
-        fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
-        marginBottom: 0,
-        marginTop: mobile ? '1.5em' : '3em',
-      }}
+    <Image
+      rounded
+      size="large"
+      src="../static/img/white-logo-med.png"
+      style={{ marginLeft: '1.8em' }}
     />
     <Header
       as="h2"
@@ -41,15 +36,12 @@ const HomepageHeading = ({ mobile }) => (
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
-        marginTop: mobile ? '0.5em' : '1.5em',
+        marginTop: mobile ? '0.5em' : '0.5em',
+        marginLeft: '-4.8em'
       }}
     />
-    <Button
-      color="yellow"
-      size="huge"
-    >
-        Comenzar
-      <Icon name="right arrow" />
+    <Button color="red" size="huge">
+      Comenzar
     </Button>
   </Container>
 );
@@ -90,7 +82,7 @@ class DesktopContainer extends React.Component {
             inverted
             color="blue"
             textAlign="center"
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{ minHeight: 550, padding: '1em 0em' }}
             vertical
           >
             <Menu
@@ -111,7 +103,7 @@ class DesktopContainer extends React.Component {
                   <Button as="a" inverted={fixed} color="blue">
                       Ingresa
                   </Button>
-                  <Button as="a" inverted={fixed} color="blue" primary={fixed} style={{ marginLeft: '0.5em' }}>
+                  <Button as="a" inverted={fixed} style={{ marginLeft: '0.5em' }}>
                       Regístrate
                   </Button>
                 </Menu.Item>
@@ -228,7 +220,7 @@ const HomepageLayout = () => (
             </p>
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
-            <Image bordered rounded size="large" src="https://browardcollegeblog.com/wp-content/uploads/2015/10/ETS_TOEFL_Authorized_Test_Center.jpg" />
+            <Image rounded size="large" src="https://browardcollegeblog.com/wp-content/uploads/2015/10/ETS_TOEFL_Authorized_Test_Center.jpg" />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>

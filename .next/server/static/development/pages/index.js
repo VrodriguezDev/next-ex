@@ -135,15 +135,12 @@ var HomepageHeading = function HomepageHeading(_ref) {
   var mobile = _ref.mobile;
   return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Container"], {
     text: true
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
-    as: "h1",
-    content: "Mr. Toefl",
-    inverted: true,
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Image"], {
+    rounded: true,
+    size: "large",
+    src: "../static/img/white-logo-med.png",
     style: {
-      fontSize: mobile ? '2em' : '4em',
-      fontWeight: 'normal',
-      marginBottom: 0,
-      marginTop: mobile ? '1.5em' : '3em'
+      marginLeft: '1.8em'
     }
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
     as: "h2",
@@ -152,14 +149,13 @@ var HomepageHeading = function HomepageHeading(_ref) {
     style: {
       fontSize: mobile ? '1.5em' : '1.7em',
       fontWeight: 'normal',
-      marginTop: mobile ? '0.5em' : '1.5em'
+      marginTop: mobile ? '0.5em' : '0.5em',
+      marginLeft: '-4.8em'
     }
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
-    color: "yellow",
+    color: "red",
     size: "huge"
-  }, "Comenzar", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Icon"], {
-    name: "right arrow"
-  })));
+  }, "Comenzar"));
 };
 
 var getWidth = function getWidth() {
@@ -210,7 +206,7 @@ function (_React$Component) {
         color: "blue",
         textAlign: "center",
         style: {
-          minHeight: 700,
+          minHeight: 550,
           padding: '1em 0em'
         },
         vertical: true
@@ -238,8 +234,6 @@ function (_React$Component) {
       }, "Ingresa"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
         as: "a",
         inverted: fixed,
-        color: "blue",
-        primary: fixed,
         style: {
           marginLeft: '0.5em'
         }
@@ -375,7 +369,6 @@ var HomepageLayout = function HomepageLayout() {
     floated: "right",
     width: 6
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Image"], {
-    bordered: true,
     rounded: true,
     size: "large",
     src: "https://browardcollegeblog.com/wp-content/uploads/2015/10/ETS_TOEFL_Authorized_Test_Center.jpg"
@@ -836,7 +829,7 @@ function Main() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\projects\next-ex\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/VARS/projects/next-ex/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
