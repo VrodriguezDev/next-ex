@@ -42,13 +42,13 @@ class MobileContainer extends Component {
           visible={sidebarOpened}
         >
           <Menu.Item as="a" active>
-                Inicio
+                Home
           </Menu.Item>
-          <Menu.Item as="a">Lecciones</Menu.Item>
-          <Menu.Item as="a">Prácticas</Menu.Item>
-          <Menu.Item as="a">Planes</Menu.Item>
-          <Menu.Item as="a">Ingresa</Menu.Item>
-          <Menu.Item as="a">Regístrate</Menu.Item>
+          <Menu.Item as="a">Lessons</Menu.Item>
+          <Menu.Item as="a">Practice</Menu.Item>
+          <Menu.Item as="a">Plans</Menu.Item>
+          <Menu.Item as="a">Sign in</Menu.Item>
+          <Menu.Item as="a">Sign up</Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -66,10 +66,10 @@ class MobileContainer extends Component {
                 </Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" color="blue">
-                        Ingresa
+                        Sign in
                   </Button>
                   <Button as="a" color="blue" style={{ marginLeft: '0.5em' }}>
-                        Regístrate
+                        Sign up
                   </Button>
                 </Menu.Item>
               </Menu>

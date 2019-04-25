@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
@@ -9,6 +10,7 @@ import {
   Segment,
   Visibility,
 } from 'semantic-ui-react';
+import Link from 'next/link';
 import HomepageHeading from '../HomepageHeading';
 
 class DesktopContainer extends Component {
@@ -50,18 +52,24 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
-                <Menu.Item as="a" active>
-                      Inicio
+                <Menu.Item active>
+                  <Link href="/index" as="a">
+                    Home
+                  </Link>
                 </Menu.Item>
-                <Menu.Item as="a">Lecciones</Menu.Item>
-                <Menu.Item as="a">Prácticas</Menu.Item>
-                <Menu.Item as="a">Planes</Menu.Item>
+                <Menu.Item>
+                  <Link href="/lessons" as="a">
+                    Lessons
+                  </Link>
+                </Menu.Item>
+                <Menu.Item as="a">Practice</Menu.Item>
+                <Menu.Item as="a">Plans</Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={fixed} color="blue">
-                        Ingresa
+                        Sign in
                   </Button>
                   <Button as="a" inverted={fixed} style={{ marginLeft: '0.5em' }}>
-                        Regístrate
+                        Sign up
                   </Button>
                 </Menu.Item>
               </Container>

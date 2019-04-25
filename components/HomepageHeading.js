@@ -27,7 +27,7 @@ const HomepageHeading = ({ mobile }) => (
       }}
     />
     <Button color="red" size="huge">
-        Comenzar
+        Start
     </Button>
   </Container>
 );

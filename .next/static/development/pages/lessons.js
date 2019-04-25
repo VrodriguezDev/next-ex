@@ -1,258 +1,4 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
-
-/***/ "./components/Home.js":
-/*!****************************!*\
-  !*** ./components/Home.js ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "./node_modules/semantic-ui-react/dist/es/index.js");
-/* harmony import */ var _containers_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./containers/ResponsiveContainer */ "./components/containers/ResponsiveContainer.js");
-/* eslint-disable object-curly-newline */
-
-/* eslint-disable max-len */
-
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
-/* eslint-disable react/no-unescaped-entities */
-
-/* eslint-disable react/jsx-one-expression-per-line */
-
-/* eslint-disable react/no-multi-comp */
-
-/* eslint-disable react/prop-types */
-
-
-
-
-var HomepageLayout = function HomepageLayout() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
-    style: {
-      padding: '8em 0em'
-    },
-    vertical: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
-    container: true,
-    stackable: true,
-    verticalAlign: "middle"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
-    width: 8
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    as: "h3",
-    style: {
-      fontSize: '2em'
-    }
-  }, "Ensure a great performance for the Toefl"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "8 Entire TOEFL Tests for practice")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "Practice in our brand new TEST PREPARATION MODE")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "More than 101 countries with MisterToefl.com"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    as: "h3",
-    style: {
-      fontSize: '2em'
-    }
-  }, "Get custom plans"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "Get what you need with plans you can customize according to your own time and the amount of practice you require.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
-    floated: "right",
-    width: 6
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
-    rounded: true,
-    size: "large",
-    src: "https://browardcollegeblog.com/wp-content/uploads/2015/10/ETS_TOEFL_Authorized_Test_Center.jpg"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
-    textAlign: "center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    size: "huge"
-  }, "See our plans"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
-    style: {
-      padding: '0em'
-    },
-    vertical: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
-    celled: "internally",
-    columns: "equal",
-    stackable: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, {
-    textAlign: "center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
-    style: {
-      paddingBottom: '5em',
-      paddingTop: '5em'
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
-    avatar: true,
-    src: "https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png",
-    style: {
-      fontSize: '2em'
-    }
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "Lorena"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    as: "h5",
-    style: {
-      fontSize: '2em'
-    }
-  }, "\"With MisterToefl I have learned a lot for the test. I have increased my score by 8 points\"")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
-    style: {
-      paddingBottom: '5em',
-      paddingTop: '5em'
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    as: "h5",
-    style: {
-      fontSize: '2em'
-    }
-  }, "\"MisterToefl has plenty of material available. I have improved my score by 5 points\""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
-    avatar: true,
-    src: "https://www.ibts.org/wp-content/uploads/2017/08/iStock-476085198.jpg"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "Mark"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, {
-    style: {
-      borderBottom: '0em'
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
-    style: {
-      paddingBottom: '5em',
-      paddingTop: '5em',
-      paddingLeft: '15em',
-      paddingRight: '15em'
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    as: "h5",
-    style: {
-      fontSize: '2em'
-    }
-  }, "\"I really like MisterToefl\u2019s TEST PREPARATION MODE. It is so realistic. I have boosted my score by 12 points\""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
-    avatar: true,
-    src: "https://png.pngtree.com/svg/20161217/43a873f79c.svg",
-    style: {
-      fontSize: '2em'
-    }
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "Sergio"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Divider"], {
-    as: "h4",
-    className: "header",
-    horizontal: true,
-    style: {
-      margin: '1em 0em',
-      textTransform: 'uppercase'
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "ADVANTAGES")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
-    style: {
-      padding: '8em 0em'
-    },
-    vertical: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Container"], {
-    text: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    as: "h3",
-    style: {
-      fontSize: '2em'
-    }
-  }, "\xBFWhy use MrToefl?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "Prep anytime from your desktop with our self-study platform")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "You can get 4 speaking questions and 4 writing questions scored by our team of experts with your subscriptions")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "Thousands of timed practice questions")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "Video lessons taught by experts")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "Track your progress")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontSize: '1.33em'
-    }
-  }, "Friendly support team"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    as: "a",
-    size: "large"
-  }, "See our Plans"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
-    inverted: true,
-    vertical: true,
-    style: {
-      padding: '5em 0em'
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
-    divided: true,
-    inverted: true,
-    stackable: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
-    width: 3
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    inverted: true,
-    as: "h4",
-    content: "Services"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"], {
-    link: true,
-    inverted: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
-    as: "a"
-  }, "FAQ"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
-    as: "a"
-  }, "About the Toefl"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
-    width: 6
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    inverted: true,
-    as: "h4",
-    content: "Contacts"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"], {
-    link: true,
-    inverted: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
-    as: "a"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Email:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "info@mrtoefl.com")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
-    as: "a"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Headquarters Cochabamba, Bolivia:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "+000 000-0000")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
-    as: "a"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Headquarters Miami, Florida:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "+000 000-0000")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
-    width: 5
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    as: "h4",
-    inverted: true
-  }, "Development"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "dev.vrodriguez@gmail.com")))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (HomepageLayout);
-
-/***/ }),
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\lessons.js"],{
 
 /***/ "./components/HomepageHeading.js":
 /*!***************************************!*\
@@ -22698,21 +22444,21 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Cindex.js!./":
-/*!*********************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Cindex.js ***!
-  \*********************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flessons&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Clessons.js!./":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flessons&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Clessons.js ***!
+  \******************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
-      var page = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/lessons", function() {
+      var page = __webpack_require__(/*! ./pages/lessons.js */ "./pages/lessons.js")
       if(true) {
-        module.hot.accept(/*! ./pages/index.js */ "./pages/index.js", function() {
-          if(!next.router.components["/"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
-          next.router.update("/", updatedPage.default || updatedPage)
+        module.hot.accept(/*! ./pages/lessons.js */ "./pages/lessons.js", function() {
+          if(!next.router.components["/lessons"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/lessons.js */ "./pages/lessons.js")
+          next.router.update("/lessons", updatedPage.default || updatedPage)
         })
       }
       return { page: page.default || page }
@@ -53893,63 +53639,68 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/lessons.js":
+/*!**************************!*\
+  !*** ./pages/lessons.js ***!
+  \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Main; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_containers_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/containers/ResponsiveContainer */ "./components/containers/ResponsiveContainer.js");
 
 
-/* eslint-disable jsx-a11y/anchor-is-valid */
 
-/* eslint-disable react/prop-types */
 
-/* eslint-disable react/destructuring-assignment */
-// import Link from 'next/link';
-// import { Button } from 'semantic-ui-react';
-// import Layout from '../components/MyLayout';
-// const PostLink = props => (
-//   <li>
-//     <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
-//       <Button primary>{props.title}</Button>
-//     </Link>
-//   </li>
-// );
-// export default function Blog() {
-//   return (
-//     <Layout>
-//       <h1>My Blog</h1>
-//       <ul>
-//         <PostLink id="hello-nextjs" title="Hello Next.js" />
-//         <PostLink id="learn-nextjs" title="Learn Next.js is awesome" />
-//         <PostLink id="deploy-nextjs" title="Deploy apps with Zeit" />
-//       </ul>
-//     </Layout>
-//   );
-// }
 
-function Main() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Home__WEBPACK_IMPORTED_MODULE_1__["default"], null);
-}
+
+/* eslint-disable react/prefer-stateless-function */
+
+/* eslint-disable react/jsx-one-expression-per-line */
+
+
+
+var LessonsLayout =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(LessonsLayout, _React$Component);
+
+  function LessonsLayout() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, LessonsLayout);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(LessonsLayout).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(LessonsLayout, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_containers_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_6__["default"], null, "Hello");
+    }
+  }]);
+
+  return LessonsLayout;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (LessonsLayout);
 
 /***/ }),
 
-/***/ 0:
-/*!*************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Cindex.js ***!
-  \*************************************************************************************************************/
+/***/ 1:
+/*!**********************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Flessons&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Clessons.js ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Cindex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Flessons&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Clessons.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flessons&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Clessons.js!./");
 
 
 /***/ }),
@@ -53965,5 +53716,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]));;
-//# sourceMappingURL=index.js.map
+},[[1,"static/runtime/webpack.js"]]]));;
+//# sourceMappingURL=lessons.js.map
