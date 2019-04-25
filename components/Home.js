@@ -1,199 +1,34 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/prop-types */
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Button,
   Container,
   Divider,
   Grid,
   Header,
-  Icon,
   Image,
   List,
-  Menu,
   Responsive,
-  Segment,
-  Sidebar,
-  Visibility,
+  Segment
 } from 'semantic-ui-react';
-
-const HomepageHeading = ({ mobile }) => (
-  <Container text>
-    <Image
-      rounded
-      size="large"
-      src="../static/img/white-logo-med.png"
-      style={{ marginLeft: '1.8em' }}
-    />
-    <Header
-      as="h2"
-      content="Educación en Inglés Especializada"
-      inverted
-      style={{
-        fontSize: mobile ? '1.5em' : '1.7em',
-        fontWeight: 'normal',
-        marginTop: mobile ? '0.5em' : '0.5em',
-        marginLeft: '-4.8em'
-      }}
-    />
-    <Button color="red" size="huge">
-      Comenzar
-    </Button>
-  </Container>
-);
+import DesktopContainer from './containers/DesktopContainer';
+import MobileContainer from './containers/MobileContainer';
 
 const getWidth = () => {
   const isSSR = typeof window === 'undefined';
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth;
 };
-/* Heads up!
-   * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however,
-   it can be implemented easily.
-   * It can be more complicated, but you can create really flexible markup.
-   */
-class DesktopContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  // // let hideFixedMenu = () => this.setState({ fixed: false });
-  // function hideFixedMenu() {
-  //     this.setState({ fixed: false });
-  // }
-  // let showFixedMenu = () => this.setState({ fixed: true });
-
-  render() {
-    const { children } = this.props;
-    const { fixed } = this.state;
-
-    return (
-      <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
-        <Visibility
-          once={false}
-          onBottomPassed={this.showFixedMenu}
-          onBottomPassedReverse={this.hideFixedMenu}
-        >
-          <Segment
-            inverted
-            color="blue"
-            textAlign="center"
-            style={{ minHeight: 550, padding: '1em 0em' }}
-            vertical
-          >
-            <Menu
-              inverted
-              fixed={fixed ? 'top' : null}
-              pointing={!fixed}
-              secondary={!fixed}
-              size="large"
-            >
-              <Container>
-                <Menu.Item as="a" active>
-                    Inicio
-                </Menu.Item>
-                <Menu.Item as="a">Lecciones</Menu.Item>
-                <Menu.Item as="a">Prácticas</Menu.Item>
-                <Menu.Item as="a">Planes</Menu.Item>
-                <Menu.Item position="right">
-                  <Button as="a" inverted={fixed} color="blue">
-                      Ingresa
-                  </Button>
-                  <Button as="a" inverted={fixed} style={{ marginLeft: '0.5em' }}>
-                      Regístrate
-                  </Button>
-                </Menu.Item>
-              </Container>
-            </Menu>
-            <HomepageHeading />
-          </Segment>
-        </Visibility>
-
-        {children}
-      </Responsive>
-    );
-  }
-}
-
-class MobileContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  // handleSidebarHide = () => this.setState({ sidebarOpened: false })
-
-  // handleToggle = () => this.setState({ sidebarOpened: true })
-
-  render() {
-    const { children } = this.props;
-    const { sidebarOpened } = this.state;
-
-    return (
-      <Responsive
-        as={Sidebar.Pushable}
-        getWidth={getWidth}
-        maxWidth={Responsive.onlyMobile.maxWidth}
-      >
-        <Sidebar
-          as={Menu}
-          animation="push"
-          inverted
-          onHide={this.handleSidebarHide}
-          vertical
-          visible={sidebarOpened}
-        >
-          <Menu.Item as="a" active>
-              Inicio
-          </Menu.Item>
-          <Menu.Item as="a">Lecciones</Menu.Item>
-          <Menu.Item as="a">Prácticas</Menu.Item>
-          <Menu.Item as="a">Planes</Menu.Item>
-          <Menu.Item as="a">Ingresa</Menu.Item>
-          <Menu.Item as="a">Regístrate</Menu.Item>
-        </Sidebar>
-
-        <Sidebar.Pusher dimmed={sidebarOpened}>
-          <Segment
-            inverted
-            color="blue"
-            textAlign="center"
-            style={{ minHeight: 350, padding: '1em 0em' }}
-            vertical
-          >
-            <Container>
-              <Menu inverted pointing secondary size="large">
-                <Menu.Item onClick={this.handleToggle}>
-                  <Icon name="sidebar" />
-                </Menu.Item>
-                <Menu.Item position="right">
-                  <Button as="a" color="blue">
-                      Ingresa
-                  </Button>
-                  <Button as="a" color="blue" style={{ marginLeft: '0.5em' }}>
-                      Regístrate
-                  </Button>
-                </Menu.Item>
-              </Menu>
-            </Container>
-            <HomepageHeading mobile />
-          </Segment>
-
-          {children}
-        </Sidebar.Pusher>
-      </Responsive>
-    );
-  }
-}
 
 const ResponsiveContainer = ({ children }) => (
   <div>
-    <DesktopContainer>{children}</DesktopContainer>
-    <MobileContainer>{children}</MobileContainer>
+    <DesktopContainer getWidth={getWidth}>{children}</DesktopContainer>
+    <MobileContainer getWidth={getWidth}>{children}</MobileContainer>
   </div>
 );
 
@@ -234,22 +69,29 @@ const HomepageLayout = () => (
       <Grid celled="internally" columns="equal" stackable>
         <Grid.Row textAlign="center">
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Image avatar src="https://www.ibts.org/wp-content/uploads/2017/08/iStock-476085198.jpg" />
-            <Header as="h3" style={{ fontSize: '2em' }}>
-                "Obtuve increíbles resultados"
+            <Image avatar src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png" style={{ fontSize: '2em' }} />
+            <p style={{ fontSize: '1.33em' }}>Lorena</p>
+            <Header as="h5" style={{ fontSize: '2em' }}>
+                "With MisterToefl I have learned a lot for the test. I have increased my score by 8 points"
             </Header>
-            <p style={{ fontSize: '1.33em' }}>Álvaro Alvarez</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as="h3" style={{ fontSize: '2em' }}>
-                "Excelente programa!"
+            <Header as="h5" style={{ fontSize: '2em' }}>
+                "MisterToefl has plenty of material available. I have improved my score by 5 points"
             </Header>
             <p style={{ fontSize: '1.33em' }}>
               <Image avatar src="https://www.ibts.org/wp-content/uploads/2017/08/iStock-476085198.jpg" />
-              <b>Ing.</b>
-              {' '}
-                Marco Marquez
             </p>
+            <p style={{ fontSize: '1.33em' }}>Mark</p>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em', paddingLeft: '15em', paddingRight: '15em' }}>
+            <Header as="h5" style={{ fontSize: '2em' }}>
+                "I really like MisterToefl’s TEST PREPARATION MODE. It is so realistic. I have boosted my score by 12 points"
+            </Header>
+            <Image avatar src="https://png.pngtree.com/svg/20161217/43a873f79c.svg" style={{ fontSize: '2em' }} />
+            <p style={{ fontSize: '1.33em' }}>Sergio</p>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -292,11 +134,27 @@ const HomepageLayout = () => (
               <Header inverted as="h4" content="Servicios" />
               <List link inverted>
                 <List.Item as="a">FAQ</List.Item>
-                <List.Item as="a">Contactos</List.Item>
                 <List.Item as="a">Acerca del Toefl</List.Item>
               </List>
             </Grid.Column>
-            <Grid.Column width={7}>
+            <Grid.Column width={6}>
+              <Header inverted as="h4" content="Contactos" />
+              <List link inverted>
+                <List.Item as="a">
+                  <b>Correo electrónico:</b>
+                  <p>info@mrtoefl.com</p>
+                </List.Item>
+                <List.Item as="a">
+                  <b>Headquarters Cochabamba, Bolivia:</b>
+                  <p>+000 000-0000</p>
+                </List.Item>
+                <List.Item as="a">
+                  <b>Headquarters Miami, Florida:</b>
+                  <p>+000 000-0000</p>
+                </List.Item>
+              </List>
+            </Grid.Column>
+            <Grid.Column width={5}>
               <Header as="h4" inverted>
                   Desarrollo
               </Header>
