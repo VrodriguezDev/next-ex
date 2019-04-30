@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -113,12 +113,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var HomepageHeading = function HomepageHeading(_ref) {
-  var mobile = _ref.mobile;
+  var mobile = _ref.mobile,
+      renderHeading = _ref.renderHeading;
+
+  if (!renderHeading) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     text: true
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
     size: "large",
-    src: "../static/img/white-logo-med.png",
+    src: "../static/img/white-logo-small.png",
     style: {
       marginLeft: '1.8em'
     }
@@ -190,13 +196,16 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, DesktopContainer);
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(DesktopContainer).call(this, props));
-    _this.state = {};
+    _this.state = {
+      fixed: false
+    };
     return _this;
-  } // // let hideFixedMenu = () => this.setState({ fixed: false });
-  // function hideFixedMenu() {
-  //     this.setState({ fixed: false });
+  } // hideFixedMenu() {
+  //   this.setState({ fixed: false });
   // }
-  // let showFixedMenu = () => this.setState({ fixed: true });
+  // showFixedMenu() {
+  //   this.setState({ fixed: true });
+  // }
 
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(DesktopContainer, [{
@@ -205,6 +214,8 @@ function (_Component) {
       var children = this.props.children;
       var fixed = this.state.fixed;
       var getWidth = this.props.getWidth;
+      var renderHeading = this.props.renderHeading;
+      var height = renderHeading ? 550 : 80;
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Responsive"], {
         getWidth: getWidth,
         minWidth: semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Responsive"].onlyTablet.minWidth
@@ -217,7 +228,7 @@ function (_Component) {
         color: "blue",
         textAlign: "center",
         style: {
-          minHeight: 550,
+          minHeight: height,
           padding: '1em 0em'
         },
         vertical: true
@@ -231,15 +242,17 @@ function (_Component) {
         active: true
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
         href: "/index",
-        as: "a"
-      }, "Home")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        as: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", null, "Home"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
         href: "/lessons",
-        as: "a"
-      }, "Lessons")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
-        as: "a"
-      }, "Practice"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
-        as: "a"
-      }, "Plans"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+        as: "/lessons"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", null, "Lessons"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        href: "/lessons",
+        as: "/lessons"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", null, "Practice"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        href: "/lessons",
+        as: "/lessons"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", null, "Plans"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
         position: "right"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Button"], {
         as: "a",
@@ -251,7 +264,9 @@ function (_Component) {
         style: {
           marginLeft: '0.5em'
         }
-      }, "Sign up")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_HomepageHeading__WEBPACK_IMPORTED_MODULE_8__["default"], null))), children);
+      }, "Sign up")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_HomepageHeading__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        renderHeading: renderHeading
+      }))), children);
     }
   }]);
 
@@ -400,6 +415,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _DesktopContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DesktopContainer */ "./components/containers/DesktopContainer.js");
 /* harmony import */ var _MobileContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MobileContainer */ "./components/containers/MobileContainer.js");
+/* eslint-disable max-len */
+
 /* eslint-disable react/prop-types */
 
 
@@ -411,13 +428,73 @@ var getWidth = function getWidth() {
   return isSSR ? semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Responsive"].onlyTablet.minWidth : window.innerWidth;
 };
 
+var MainFooter = function MainFooter() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
+    inverted: true,
+    vertical: true,
+    style: {
+      padding: '3em 0em'
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
+    divided: true,
+    inverted: true,
+    stackable: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
+    width: 3
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    inverted: true,
+    as: "h4",
+    content: "Services"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"], {
+    link: true,
+    inverted: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
+    as: "a"
+  }, "FAQ"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
+    as: "a"
+  }, "About the Toefl"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
+    width: 6
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    inverted: true,
+    as: "h4",
+    content: "Contacts"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"], {
+    link: true,
+    inverted: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
+    as: "a"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Email:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "info@mrtoefl.com")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
+    as: "a"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Headquarters Cochabamba, Bolivia:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "+000 000-0000")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
+    as: "a"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Headquarters Miami, Florida:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "+000 000-0000")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
+    width: 5
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    as: "h4",
+    inverted: true
+  }, "Development"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "dev.vrodriguez@gmail.com"))))));
+};
+
 var ResponsiveContainer = function ResponsiveContainer(_ref) {
-  var children = _ref.children;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DesktopContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    getWidth: getWidth
+  var children = _ref.children,
+      renderHeading = _ref.renderHeading;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
+    style: {
+      padding: 0,
+      border: 0
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DesktopContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    getWidth: getWidth,
+    renderHeading: renderHeading
   }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MobileContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    getWidth: getWidth
-  }, children));
+    getWidth: getWidth,
+    renderHeading: renderHeading
+  }, children)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
+    style: {
+      padding: 0,
+      border: 0
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainFooter, null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ResponsiveContainer);
@@ -1197,19 +1274,12 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_containers_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/containers/ResponsiveContainer */ "./components/containers/ResponsiveContainer.js");
-
-
-
-
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_containers_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/containers/ResponsiveContainer */ "./components/containers/ResponsiveContainer.js");
+/* eslint-disable max-len */
 
 /* eslint-disable react/prefer-stateless-function */
 
@@ -1217,39 +1287,91 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var LessonsLayout =
-/*#__PURE__*/
-function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(LessonsLayout, _React$Component);
 
-  function LessonsLayout() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, LessonsLayout);
-
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(LessonsLayout).apply(this, arguments));
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(LessonsLayout, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_containers_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_6__["default"], null, "Hello");
+var LessonLayout = function LessonLayout() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
+    vertical: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
+    inverted: true,
+    color: "red",
+    padded: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
+    columns: 2
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, {
+    fluid: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    inverted: true,
+    as: "h2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Lesson 1:"), " Video Example Breakdown", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"].Subheader, null, "In this lesson you will learn the basics of lesson one"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
+    floated: "right",
+    basic: true,
+    style: {
+      padding: '0em'
     }
-  }]);
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    grey: true,
+    content: "Previous Lesson",
+    icon: "left arrow",
+    labelPosition: "left",
+    attached: "left",
+    style: {
+      padding: '1.5em'
+    }
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    grey: true,
+    content: "Next Lesson",
+    icon: "right arrow",
+    labelPosition: "right",
+    attached: "right",
+    style: {
+      padding: '1.5em'
+    }
+  })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+    text: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
+    secondary: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    as: "h3"
+  }, "Lesson Content"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Lesson content one"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Lesson content two"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Lesson content listed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Subcontent one"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Subcontent two")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Lesson content three"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
+    vertical: true,
+    padded: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    as: "h2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Lesson 1:"), " Video Example", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"].Subheader, null, "Pay attention to the video and take notes if you want")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Embed"], {
+    id: "188171839",
+    placeholder: "../static/img/logo-med.png",
+    source: "vimeo",
+    defaultActive: "true"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
+    vertical: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    as: "h2"
+  }, "Notes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["TextArea"], {
+    placeholder: "Take your notes here",
+    style: {
+      minHeight: 150
+    }
+  }))));
+};
 
-  return LessonsLayout;
-}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+var Lessons = function Lessons() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_containers_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    renderHeading: false
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LessonLayout, null));
+};
 
-/* harmony default export */ __webpack_exports__["default"] = (LessonsLayout);
+/* harmony default export */ __webpack_exports__["default"] = (Lessons);
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!********************************!*\
   !*** multi ./pages/lessons.js ***!
   \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\projects\next-ex\pages\lessons.js */"./pages/lessons.js");
+module.exports = __webpack_require__(/*! /home/VARS/projects/next-ex/pages/lessons.js */"./pages/lessons.js");
 
 
 /***/ }),

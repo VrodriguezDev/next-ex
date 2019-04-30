@@ -11,11 +11,13 @@ app
   .then(() => {
     const server = express();
 
-    server.get('/p/:id', (req, res) => {
-      const actualPage = '/post';
-      const queryParams = { title: req.params.id };
-      app.render(req, res, actualPage, queryParams);
-    });
+    server.get('/', (req, res) => (
+      app.render(req, res, '/index', req.query)
+    ));
+
+    server.get('/lessons', (req, res) => (
+      app.render(req, res, '/lessons', req.query)
+    ));
 
     server.get('*', (req, res) => handle(req, res));
 

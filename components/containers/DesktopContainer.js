@@ -16,19 +16,25 @@ import HomepageHeading from '../HomepageHeading';
 class DesktopContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      fixed: false
+    };
   }
 
-  // // let hideFixedMenu = () => this.setState({ fixed: false });
-  // function hideFixedMenu() {
-  //     this.setState({ fixed: false });
+  // hideFixedMenu() {
+  //   this.setState({ fixed: false });
   // }
-  // let showFixedMenu = () => this.setState({ fixed: true });
+
+  // showFixedMenu() {
+  //   this.setState({ fixed: true });
+  // }
 
   render() {
     const { children } = this.props;
     const { fixed } = this.state;
     const { getWidth } = this.props;
+    const { renderHeading } = this.props;
+    const height = renderHeading ? 550 : 80;
 
     return (
       <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
@@ -41,7 +47,7 @@ class DesktopContainer extends Component {
             inverted
             color="blue"
             textAlign="center"
-            style={{ minHeight: 550, padding: '1em 0em' }}
+            style={{ minHeight: height, padding: '1em 0em' }}
             vertical
           >
             <Menu
@@ -53,17 +59,25 @@ class DesktopContainer extends Component {
             >
               <Container>
                 <Menu.Item active>
-                  <Link href="/index" as="a">
-                    Home
+                  <Link href="/index" as="/">
+                    <a>Home</a>
                   </Link>
                 </Menu.Item>
                 <Menu.Item>
-                  <Link href="/lessons" as="a">
-                    Lessons
+                  <Link href="/lessons" as="/lessons">
+                    <a>Lessons</a>
                   </Link>
                 </Menu.Item>
-                <Menu.Item as="a">Practice</Menu.Item>
-                <Menu.Item as="a">Plans</Menu.Item>
+                <Menu.Item>
+                  <Link href="/lessons" as="/lessons">
+                    <a>Practice</a>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <Link href="/lessons" as="/lessons">
+                    <a>Plans</a>
+                  </Link>
+                </Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={fixed} color="blue">
                         Sign in
@@ -74,7 +88,7 @@ class DesktopContainer extends Component {
                 </Menu.Item>
               </Container>
             </Menu>
-            <HomepageHeading />
+            <HomepageHeading renderHeading={renderHeading} />
           </Segment>
         </Visibility>
 

@@ -13,13 +13,12 @@ import {
   Grid,
   Header,
   Image,
-  List,
   Segment
 } from 'semantic-ui-react';
 import ResponsiveContainer from './containers/ResponsiveContainer';
 
 const HomepageLayout = () => (
-  <ResponsiveContainer>
+  <ResponsiveContainer renderHeading>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
@@ -144,46 +143,7 @@ const HomepageLayout = () => (
         </Button>
       </Container>
     </Segment>
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
-      <Container>
-        <Grid divided inverted stackable>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as="h4" content="Services" />
-              <List link inverted>
-                <List.Item as="a">FAQ</List.Item>
-                <List.Item as="a">About the Toefl</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={6}>
-              <Header inverted as="h4" content="Contacts" />
-              <List link inverted>
-                <List.Item as="a">
-                  <b>Email:</b>
-                  <p>info@mrtoefl.com</p>
-                </List.Item>
-                <List.Item as="a">
-                  <b>Headquarters Cochabamba, Bolivia:</b>
-                  <p>+000 000-0000</p>
-                </List.Item>
-                <List.Item as="a">
-                  <b>Headquarters Miami, Florida:</b>
-                  <p>+000 000-0000</p>
-                </List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={5}>
-              <Header as="h4" inverted>
-                  Development
-              </Header>
-              <p>
-                  dev.vrodriguez@gmail.com
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
   </ResponsiveContainer>
 );
+
 export default HomepageLayout;
