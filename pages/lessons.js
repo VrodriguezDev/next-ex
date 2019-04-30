@@ -14,7 +14,7 @@ import {
 } from 'semantic-ui-react';
 import ResponsiveContainer from '../components/containers/ResponsiveContainer';
 
-const LessonLayout = () => (
+const Lesson = () => (
   <Container>
     <Segment vertical>
       <Segment inverted color="red" padded>
@@ -67,10 +67,10 @@ const LessonLayout = () => (
   </Container>
 );
 
-const Lessons = () => (
-  <ResponsiveContainer renderHeading={false}>
-    <LessonLayout />
-  </ResponsiveContainer>
-);
-
-export default Lessons;
+export default function Lessons() {
+  return (
+    <ResponsiveContainer renderHeading={false}>
+      <Lesson />
+    </ResponsiveContainer>
+  );
+}

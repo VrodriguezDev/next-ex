@@ -1274,6 +1274,7 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Lessons; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
@@ -1288,7 +1289,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var LessonLayout = function LessonLayout() {
+var Lesson = function Lesson() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
     vertical: true
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
@@ -1354,13 +1355,11 @@ var LessonLayout = function LessonLayout() {
   }))));
 };
 
-var Lessons = function Lessons() {
+function Lessons() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_containers_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
     renderHeading: false
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LessonLayout, null));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Lessons);
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Lesson, null));
+}
 
 /***/ }),
 
@@ -1371,7 +1370,7 @@ var Lessons = function Lessons() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/VARS/projects/next-ex/pages/lessons.js */"./pages/lessons.js");
+module.exports = __webpack_require__(/*! C:\projects\next-ex\pages\lessons.js */"./pages/lessons.js");
 
 
 /***/ }),

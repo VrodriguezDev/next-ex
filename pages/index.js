@@ -18,7 +18,7 @@ import {
 } from 'semantic-ui-react';
 import ResponsiveContainer from '../components/containers/ResponsiveContainer';
 
-const HomepageLayout = () => (
+const Homepage = () => (
   <ResponsiveContainer renderHeading>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign="middle">
@@ -149,6 +149,6 @@ const HomepageLayout = () => (
 
 export default function Main() {
   return (
-    <HomepageLayout />
+    <Homepage />
   );
 }

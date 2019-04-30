@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1299,7 +1299,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var HomepageLayout = function HomepageLayout() {
+var Homepage = function Homepage() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_containers_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
     renderHeading: true
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
@@ -1479,19 +1479,19 @@ var HomepageLayout = function HomepageLayout() {
 };
 
 function Main() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HomepageLayout, null);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Homepage, null);
 }
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/VARS/projects/next-ex/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\projects\next-ex\pages\index.js */"./pages/index.js");
 
 
 /***/ }),
