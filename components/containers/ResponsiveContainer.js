@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import {
   Responsive,
