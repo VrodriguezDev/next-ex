@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 /* eslint-disable max-len */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/jsx-one-expression-per-line */
@@ -9,34 +11,60 @@ import {
   Embed,
   Form,
   TextArea,
-  Button,
-  Grid
+  Grid,
+  Reveal,
+  Icon,
+  Button
 } from 'semantic-ui-react';
 import ResponsiveContainer from '../components/containers/ResponsiveContainer';
+import { NavigationComp, NavigationCompWithReveal } from '../components/lesson/lessonComponents';
 
-const Lesson = () => (
+const lesson1 = {
+  title: 'Mrtoefl Lesson One',
+  description: 'In this lesson you will learn the basics'
+};
+
+const NavReveal = ({ direction }) => {
+  const move = direction === 'left' ? 'move' : 'move right';
+  return (
+    <Reveal animated={move} instant>
+      <Reveal.Content as="Segment" visible>
+        <Container fluid textAlign="center">
+          <Icon inverted bordered color="white" name="angle right" size="big" />
+        </Container>
+      </Reveal.Content>
+      <Reveal.Content as="Segment" hidden>
+        <NavigationComp direction={direction} />
+      </Reveal.Content>
+    </Reveal>
+  );
+};
+
+const Lesson = ({ lessonContent }) => (
   <Container>
     <Segment vertical>
-      <Segment inverted color="red" padded>
-        <Grid columns={2}>
-          <Grid.Row fluid>
-            <Grid.Column>
-              <Header inverted as="h2">
-                <b>Lesson 1:</b> Video Example Breakdown
-                <Header.Subheader>In this lesson you will learn the basics of lesson one</Header.Subheader>
-              </Header>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment floated="right" basic style={{ padding: '0em' }}>
-                <Button grey content="Previous Lesson" icon="left arrow" labelPosition="left" attached="left" style={{ padding: '1.5em' }} />
-                <Button grey content="Next Lesson" icon="right arrow" labelPosition="right" attached="right" style={{ padding: '1.5em' }} />
-              </Segment>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Segment>
+      <div>
+        <Segment vertical padded>
+          <Grid container columns={3}>
+            <Grid.Row stretched>
+              <Grid.Column width={3} stretched style={{ 'padding-right': '2px' }}>
+                <NavReveal direction="left" />
+              </Grid.Column>
+              <Grid.Column width={10} inverted color="red" verticalAlign="middle" style={{ 'border-radius': '5px' }}>
+                <Header inverted as="h2">
+                  <b>{lessonContent.title}</b>
+                  <Header.Subheader>{lessonContent.description}</Header.Subheader>
+                </Header>
+              </Grid.Column>
+              <Grid.Column width={3} stretched style={{ 'padding-right': '0px', 'padding-left': '2px' }}>
+                <NavReveal direction="right" />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+      </div>
       <Container text>
-        <Segment secondary>
+        <Segment secondary padded>
           <Header as="h3">Lesson Content</Header>
           <ol>
             <li>Lesson content one</li>
@@ -70,7 +98,7 @@ const Lesson = () => (
 export default function Lessons() {
   return (
     <ResponsiveContainer renderHeading={false}>
-      <Lesson />
+      <Lesson lessonContent={lesson1} />
     </ResponsiveContainer>
   );
 }
