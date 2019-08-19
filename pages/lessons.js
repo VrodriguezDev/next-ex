@@ -8,22 +8,49 @@ import {
   Container,
   Header,
   Segment,
-  Embed,
-  Form,
-  TextArea,
   Grid
 } from 'semantic-ui-react';
 import ResponsiveContainer from '../components/containers/ResponsiveContainer';
-import { LessonNavReveal } from '../components/lesson/lessonComponents';
+import { LessonNavReveal, LessonTabs, LessonTab } from '../components/lesson/lessonComponents';
+
+const textTabMenuItem = value => (
+  {
+    key: value,
+    icon: 'file text',
+    content: value
+  }
+);
+
+const videoTabMenuItem = value => (
+  {
+    key: value,
+    icon: 'film',
+    content: value
+  }
+);
+
+const lesson1Text = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus.';
 
 const lesson1 = {
-  title: 'Mrtoefl Lesson One',
-  description: 'In this lesson you will learn the basics'
+  title: 'Lesson One',
+  description: 'In this lesson you will learn the basics',
+  panes: [
+    {
+      menuItem: textTabMenuItem('Lesson Overview'),
+      render: () =>
+        <LessonTab tabType="text" content={<Container text style={{ height: '600px' }}><Header as="h2">Lesson 1 Overview</Header><p>{lesson1Text}</p></Container>} />
+    },
+    {
+      menuItem: videoTabMenuItem('Video Lesson'),
+      render: () =>
+        <LessonTab tabType="video" content={{ title: 'Video Lesson 1:', videoId: '188171839' }} />
+    }
+  ]
 };
 
 const Lesson = ({ lessonContent }) => (
-  <Container>
-    <Segment vertical>
+  <Container style={{ paddingTop: '1em' }}>
+    <Segment.Group raised>
       <Segment vertical padded>
         <Grid container columns={3}>
           <Grid.Row stretched>
@@ -42,22 +69,10 @@ const Lesson = ({ lessonContent }) => (
           </Grid.Row>
         </Grid>
       </Segment>
-      <Container text>
-        <Segment secondary padded>
-          <Header as="h3">Lesson Content</Header>
-          <ol>
-            <li>Lesson content one</li>
-            <li>Lesson content two</li>
-            <li>Lesson content listed</li>
-            <ul>
-              <li>Subcontent one</li>
-              <li>Subcontent two</li>
-            </ul>
-            <li>Lesson content three</li>
-          </ol>
-        </Segment>
-      </Container>
-    </Segment>
+      <Segment vertical style={{ border: '0' }}>
+        <LessonTabs lesson={lessonContent} />
+      </Segment>
+    </Segment.Group>
   </Container>
 );
 

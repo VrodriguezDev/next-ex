@@ -6,7 +6,14 @@ import {
   Reveal,
   Icon,
   Card,
-  Image
+  Image,
+  Tab,
+  Segment,
+  Header,
+  Embed,
+  Form,
+  TextArea,
+  Container
 } from 'semantic-ui-react';
 
 const getNavigationParams = (direction) => {
@@ -59,4 +66,54 @@ export const LessonNavReveal = ({ direction }) => {
       </Reveal.Content>
     </Reveal>
   );
+};
+
+export const LessonTabs = ({ lesson }) => (
+  <Tab menu={{ secondary: true, pointing: true }} panes={lesson.panes} />
+);
+
+const LessonTabPane = props => (
+  // eslint-disable-next-line react/destructuring-assignment
+  <Tab.Pane attached="false" style={{ border: '0' }}>{props.children}</Tab.Pane>
+);
+
+const TextLessonTabPane = ({ content }) => (
+  <LessonTabPane style={{ height: '600px' }}>{content}</LessonTabPane>
+);
+
+const VideoLessonTabPane = ({ content }) => (
+  <LessonTabPane>
+    <Container text>
+      <Segment vertical padded>
+        <Header as="h2">
+          {content.title}
+          <Header.Subheader>Pay attention to the video and take notes if you want</Header.Subheader>
+        </Header>
+        <Embed id={content.videoId} placeholder="../../static/img/logo-med.png" source="vimeo" defaultActive="true" />
+      </Segment>
+      <Segment vertical>
+        <Header as="h2">Notes</Header>
+        <Form>
+          <TextArea placeholder="Take your notes here" style={{ minHeight: 150 }} />
+        </Form>
+      </Segment>
+    </Container>
+  </LessonTabPane>
+);
+
+export const LessonTab = ({ tabType, content }) => {
+  switch (tabType) {
+    case 'text':
+      return (
+        <TextLessonTabPane content={content} />
+      );
+    case 'video':
+      return (
+        <VideoLessonTabPane content={content} />
+      );
+    default:
+      return (
+        <Tab.Pane attached="false">Tab Content</Tab.Pane>
+      );
+  }
 };
