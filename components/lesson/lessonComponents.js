@@ -39,7 +39,7 @@ const getNavigationParams = (direction) => {
   return res;
 };
 
-export const LessonNavigationButton = ({ dirParams }) => (
+export const LessonNavigationButton = ({ dirParams, navFunc }) => (
   <Button
     fluid
     color="red"
@@ -47,10 +47,11 @@ export const LessonNavigationButton = ({ dirParams }) => (
     icon={dirParams.icon}
     labelPosition={dirParams.labelPos}
     style={{ paddingTop: '1.8em', paddingBottom: '1.8em' }}
+    onClick={navFunc}
   />
 );
 
-export const LessonNavReveal = ({ direction }) => {
+export const LessonNavReveal = ({ direction, navFunc }) => {
   const dirParams = getNavigationParams(direction);
   return (
     <Reveal animated={dirParams.moveDir} style={{ 'border-radius': '5px' }}>
@@ -62,7 +63,7 @@ export const LessonNavReveal = ({ direction }) => {
         </Card>
       </Reveal.Content>
       <Reveal.Content hidden>
-        <LessonNavigationButton dirParams={dirParams} />
+        <LessonNavigationButton dirParams={dirParams} navFunc={navFunc} />
       </Reveal.Content>
     </Reveal>
   );

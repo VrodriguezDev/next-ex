@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/jsx-one-expression-per-line */
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Container,
   Header,
@@ -29,7 +29,27 @@ const videoTabMenuItem = value => (
   }
 );
 
-const lesson1Text = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus.';
+const less1content = () => (
+  <Container text style={{ height: '600px' }}>
+    <Header as="h2">Lesson 1 Overview</Header>
+    <Header as="h4">Part One</Header>
+    <p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus.
+    </p>
+    <Header as="h4">Part Two</Header>
+    <p>
+      Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus.
+    </p>
+    <Header as="h4">Part Three</Header>
+    <p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      <ul>
+        <li>Aenean massa strong.</li>
+        <li>Aenean commodo ligula eget dolor.</li>
+      </ul>
+    </p>
+  </Container>
+);
 
 const lesson1 = {
   title: 'Lesson One',
@@ -37,49 +57,75 @@ const lesson1 = {
   panes: [
     {
       menuItem: textTabMenuItem('Lesson Overview'),
-      render: () =>
-        <LessonTab tabType="text" content={<Container text style={{ height: '600px' }}><Header as="h2">Lesson 1 Overview</Header><p>{lesson1Text}</p></Container>} />
+      render: () => <LessonTab tabType="text" content={less1content()} />
     },
     {
       menuItem: videoTabMenuItem('Video Lesson'),
-      render: () =>
-        <LessonTab tabType="video" content={{ title: 'Video Lesson 1:', videoId: '188171839' }} />
+      render: () => <LessonTab tabType="video" content={{ title: 'Video Lesson 1:', videoId: '188171839' }} />
     }
   ]
 };
 
-const Lesson = ({ lessonContent }) => (
-  <Container style={{ paddingTop: '1em' }}>
-    <Segment.Group raised>
-      <Segment vertical padded>
-        <Grid container columns={3}>
-          <Grid.Row stretched>
-            <Grid.Column width={3} stretched>
-              <LessonNavReveal direction="left" />
-            </Grid.Column>
-            <Grid.Column width={10} inverted color="red" verticalAlign="middle" style={{ 'border-radius': '5px' }}>
-              <Header inverted as="h2">
-                <b>{lessonContent.title}</b>
-                <Header.Subheader>{lessonContent.description}</Header.Subheader>
-              </Header>
-            </Grid.Column>
-            <Grid.Column width={3} stretched>
-              <LessonNavReveal direction="right" />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Segment>
-      <Segment vertical style={{ border: '0' }}>
-        <LessonTabs lesson={lessonContent} />
-      </Segment>
-    </Segment.Group>
-  </Container>
-);
+const lessonsArray = [lesson1, lesson1, lesson1];
+
+class Lessonn extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lessonIndex: 0,
+      lessonsList: props.lessonsList,
+      lesson: props.lessonsList[0]
+    };
+  }
+
+  nextLesson() {
+    if (this.state.lessonIndex < this.state.lessonsList.length) {
+      this.setState(state => ({ lesson: state.lessonsList[state.lessonIndex + 1], lessonIndex: state.lessonIndex + 1 }));
+    }
+  }
+
+  prevLesson() {
+    if (this.state.lessonIndex > 0) {
+      this.setState(state => ({ lesson: state.lessonsList[state.lessonIndex - 1], lessonIndex: state.lessonIndex - 1 }));
+    }
+  }
+
+  render() {
+    const { lesson } = this.state;
+    return (
+      <Container style={{ paddingTop: '1em' }}>
+        <Segment.Group raised>
+          <Segment vertical padded>
+            <Grid container columns={3}>
+              <Grid.Row stretched>
+                <Grid.Column width={3} stretched>
+                  <LessonNavReveal direction="left" navFunc={this.prevLesson} />
+                </Grid.Column>
+                <Grid.Column width={10} inverted color="red" verticalAlign="middle" style={{ 'border-radius': '5px' }}>
+                  <Header inverted as="h2">
+                    <b>{lesson.title}</b>
+                    <Header.Subheader>{lesson.description}</Header.Subheader>
+                  </Header>
+                </Grid.Column>
+                <Grid.Column width={3} stretched>
+                  <LessonNavReveal direction="right" navFunc={this.nextLesson} />
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Segment>
+          <Segment vertical style={{ border: '0' }}>
+            <LessonTabs lesson={lesson} />
+          </Segment>
+        </Segment.Group>
+      </Container>
+    );
+  }
+}
 
 export default function Lessons() {
   return (
     <ResponsiveContainer renderHeading={false}>
-      <Lesson lessonContent={lesson1} />
+      <Lessonn lessonsList={lessonsArray} />
     </ResponsiveContainer>
   );
 }
