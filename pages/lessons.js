@@ -30,7 +30,7 @@ const videoTabMenuItem = value => (
 );
 
 const less1content = () => (
-  <Container text style={{ height: '600px' }}>
+  <Container text style={{ height: '500px' }}>
     <Header as="h2">Lesson 1 Overview</Header>
     <Header as="h4">Part One</Header>
     <p>
@@ -51,12 +51,30 @@ const less1content = () => (
   </Container>
 );
 
+const less2content = () => (
+  <Container text style={{ height: '500px' }}>
+    <Header as="h2">Lesson 2 Overview</Header>
+    <Header as="h4">Part One</Header>
+    <p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      <ul>
+        <li>Aenean massa strong.</li>
+        <li>Aenean commodo ligula eget dolor.</li>
+      </ul>
+    </p>
+    <Header as="h4">Part Three</Header>
+    <p>
+      Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus.
+    </p>
+  </Container>
+);
+
 const lesson1 = {
   title: 'Lesson One',
   description: 'In this lesson you will learn the basics',
   panes: [
     {
-      menuItem: textTabMenuItem('Lesson Overview'),
+      menuItem: textTabMenuItem('Lesson 1 Overview'),
       render: () => <LessonTab tabType="text" content={less1content()} />
     },
     {
@@ -66,7 +84,41 @@ const lesson1 = {
   ]
 };
 
-const lessonsArray = [lesson1, lesson1, lesson1];
+const lesson2 = {
+  title: 'Lesson Two',
+  description: 'Intermediate lesson with two videos',
+  panes: [
+    {
+      menuItem: textTabMenuItem('Lesson 2 Overview'),
+      render: () => <LessonTab tabType="text" content={less2content()} />
+    },
+    {
+      menuItem: videoTabMenuItem('Video Lesson: Part I'),
+      render: () => <LessonTab tabType="video" content={{ title: 'Video Lesson 2 - Part I:', videoId: '114900089' }} />
+    },
+    {
+      menuItem: videoTabMenuItem('Video Lesson: Part II'),
+      render: () => <LessonTab tabType="video" content={{ title: 'Video Lesson 2 - Part II:', videoId: '188171839' }} />
+    }
+  ]
+};
+
+const lesson3 = {
+  title: 'Lesson Three',
+  description: 'Course conclusions',
+  panes: [
+    {
+      menuItem: textTabMenuItem('Lesson 3 Overview'),
+      render: () => <LessonTab tabType="text" content={less1content()} />
+    },
+    {
+      menuItem: videoTabMenuItem('Video Lesson: Conclusion'),
+      render: () => <LessonTab tabType="video" content={{ title: 'Video Lesson 3 - Conclusion:', videoId: '114900089' }} />
+    }
+  ]
+};
+
+const lessonsArray = [lesson1, lesson2, lesson3];
 
 class Lessonn extends Component {
   constructor(props) {
@@ -76,6 +128,8 @@ class Lessonn extends Component {
       lessonsList: props.lessonsList,
       lesson: props.lessonsList[0]
     };
+    this.nextLesson = this.nextLesson.bind(this);
+    this.prevLesson = this.prevLesson.bind(this);
   }
 
   nextLesson() {
