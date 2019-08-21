@@ -11,7 +11,12 @@ import {
   Grid
 } from 'semantic-ui-react';
 import ResponsiveContainer from '../components/containers/ResponsiveContainer';
-import { LessonNavReveal, LessonTabs, LessonTab } from '../components/lesson/lessonComponents';
+import {
+  LessonNavReveal,
+  LessonTabs,
+  LessonTab,
+  LessonMenuButton
+} from '../components/lesson/lessonComponents';
 
 const textTabMenuItem = value => (
   {
@@ -120,7 +125,7 @@ const lesson3 = {
 
 const lessonsArray = [lesson1, lesson2, lesson3];
 
-class Lessonn extends Component {
+class Lesson extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -133,7 +138,7 @@ class Lessonn extends Component {
   }
 
   nextLesson() {
-    if (this.state.lessonIndex < this.state.lessonsList.length) {
+    if (this.state.lessonIndex < this.state.lessonsList.length - 1) {
       this.setState(state => ({ lesson: state.lessonsList[state.lessonIndex + 1], lessonIndex: state.lessonIndex + 1 }));
     }
   }
@@ -149,25 +154,28 @@ class Lessonn extends Component {
     return (
       <Container style={{ paddingTop: '1em' }}>
         <Segment.Group raised>
-          <Segment vertical padded>
+          <Segment vertical padded secondary>
             <Grid container columns={3}>
               <Grid.Row stretched>
-                <Grid.Column width={3} stretched>
+                <Grid.Column width={1} style={{ paddingRight: 0 }}>
+                  <LessonMenuButton />
+                </Grid.Column>
+                <Grid.Column width={2} stretched>
                   <LessonNavReveal direction="left" navFunc={this.prevLesson} />
                 </Grid.Column>
-                <Grid.Column width={10} inverted color="red" verticalAlign="middle" style={{ 'border-radius': '5px' }}>
+                <Grid.Column width={11} inverted color="red" verticalAlign="middle" style={{ borderRadius: 5 }}>
                   <Header inverted as="h2">
                     <b>{lesson.title}</b>
                     <Header.Subheader>{lesson.description}</Header.Subheader>
                   </Header>
                 </Grid.Column>
-                <Grid.Column width={3} stretched>
+                <Grid.Column width={2} stretched>
                   <LessonNavReveal direction="right" navFunc={this.nextLesson} />
                 </Grid.Column>
               </Grid.Row>
             </Grid>
           </Segment>
-          <Segment vertical style={{ border: '0' }}>
+          <Segment vertical secondary style={{ border: 0 }}>
             <LessonTabs lesson={lesson} />
           </Segment>
         </Segment.Group>
@@ -179,7 +187,7 @@ class Lessonn extends Component {
 export default function Lessons() {
   return (
     <ResponsiveContainer renderHeading={false}>
-      <Lessonn lessonsList={lessonsArray} />
+      <Lesson lessonsList={lessonsArray} />
     </ResponsiveContainer>
   );
 }

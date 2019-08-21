@@ -21,20 +21,20 @@ const getNavigationParams = (direction) => {
   let dirText = 'Next Lesson';
   let labelPos = 'right';
   let icon = 'angle right';
-  let margin = { 'margin-left': '2em' };
+  let iconMargin = { paddingRight: '0.5em' };
   let moveDir = 'move right';
   if (direction === 'left') {
     dirText = 'Previous Lesson';
     labelPos = 'left';
     icon = 'angle left';
-    margin = { 'margin-left': '2em' };
+    iconMargin = { paddingRight: '0.5em' };
     moveDir = 'move';
   }
   const res = {};
   res.dirText = dirText;
   res.labelPos = labelPos;
   res.icon = icon;
-  res.margin = margin;
+  res.iconMargin = iconMargin;
   res.moveDir = moveDir;
   return res;
 };
@@ -43,22 +43,40 @@ export const LessonNavigationButton = ({ dirParams, navFunc }) => (
   <Button
     fluid
     color="red"
-    content={dirParams.dirText}
-    icon={dirParams.icon}
+    icon
     labelPosition={dirParams.labelPos}
-    style={{ paddingTop: '1.8em', paddingBottom: '1.8em' }}
+    attached={dirParams.labelPos}
     onClick={navFunc}
-  />
+    style={{ paddingTop: '1em', paddingBottom: '1em' }}
+  >
+    {dirParams.dirText}
+    <Icon name={dirParams.icon} style={dirParams.iconMargin} />
+  </Button>
 );
+
+export const LessonMenuButton = () => (
+  <Button color="black" icon="list ul" />
+);
+
+export const RegularLessonNav = ({ direction, navFunc }) => {
+  const dirParams = getNavigationParams(direction);
+  return (
+    <Card>
+      <Button fluid onClick={navFunc} style={{ backgroundColor: '#1b1c1d' }}>
+        <Icon fluid inverted bordered name={dirParams.icon} size="big" style={{ marginLeft: '1em' }} />
+      </Button>
+    </Card>
+  );
+};
 
 export const LessonNavReveal = ({ direction, navFunc }) => {
   const dirParams = getNavigationParams(direction);
   return (
-    <Reveal animated={dirParams.moveDir} style={{ 'border-radius': '5px' }}>
+    <Reveal animated={dirParams.moveDir} style={{ borderRadius: 5 }}>
       <Reveal.Content visible>
         <Card>
-          <Image fluid centered style={{ 'background-color': '#1b1c1d!important' }}>
-            <Icon fluid inverted bordered name={dirParams.icon} size="big" style={dirParams.margin} />
+          <Image fluid style={{ backgroundColor: '#1b1c1d' }}>
+            <Icon fluid inverted bordered name={dirParams.icon} size="big" style={{ marginLeft: '1em' }} />
           </Image>
         </Card>
       </Reveal.Content>
@@ -70,16 +88,16 @@ export const LessonNavReveal = ({ direction, navFunc }) => {
 };
 
 export const LessonTabs = ({ lesson }) => (
-  <Tab menu={{ secondary: true, pointing: true }} panes={lesson.panes} />
+  <Tab menu={{ secondary: true, pointing: true }} panes={lesson.panes} style={{ paddingLeft: '5em', paddingRight: '5em' }} />
 );
 
 const LessonTabPane = props => (
   // eslint-disable-next-line react/destructuring-assignment
-  <Tab.Pane attached="false" style={{ border: '0' }}>{props.children}</Tab.Pane>
+  <Tab.Pane style={{ border: 0 }}>{props.children}</Tab.Pane>
 );
 
 const TextLessonTabPane = ({ content }) => (
-  <LessonTabPane style={{ height: '600px' }}>{content}</LessonTabPane>
+  <LessonTabPane>{content}</LessonTabPane>
 );
 
 const VideoLessonTabPane = ({ content }) => (
@@ -114,7 +132,7 @@ export const LessonTab = ({ tabType, content }) => {
       );
     default:
       return (
-        <Tab.Pane attached="false">Tab Content</Tab.Pane>
+        <Tab.Pane>Tab Content</Tab.Pane>
       );
   }
 };
