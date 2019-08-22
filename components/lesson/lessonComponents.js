@@ -13,7 +13,9 @@ import {
   Embed,
   Form,
   TextArea,
-  Container
+  Container,
+  Menu,
+  Dropdown
 } from 'semantic-ui-react';
 
 const getNavigationParams = (direction) => {
@@ -42,7 +44,7 @@ const getNavigationParams = (direction) => {
 export const LessonNavigationButton = ({ dirParams, navFunc }) => (
   <Button
     fluid
-    color="red"
+    color="black"
     icon
     labelPosition={dirParams.labelPos}
     attached={dirParams.labelPos}
@@ -54,8 +56,32 @@ export const LessonNavigationButton = ({ dirParams, navFunc }) => (
   </Button>
 );
 
+const options = [
+  {
+    key: 'home',
+    value: 'home',
+    content:
+  <Header as="h4">
+    <Icon name="home" />
+    <Header.Content>Home</Header.Content>
+  </Header>
+  }
+];
+
 export const LessonMenuButton = () => (
-  <Button color="black" icon="list ul" />
+  <Button.Group color="black">
+    <Dropdown
+      className="button icon"
+      icon={<Icon fluid inverted bordered name="list ul" />}
+      options={options}
+      trigger={<React.Fragment />}
+    />
+  </Button.Group>
+  // <Dropdown icon={<Icon fluid inverted bordered name="list ul" />}>
+  //   <Dropdown.Menu>
+  //     <Dropdown.Item text={<Header as="h4" icon="home" content="Home" />} />
+  //   </Dropdown.Menu>
+  // </Dropdown>
 );
 
 export const RegularLessonNav = ({ direction, navFunc }) => {

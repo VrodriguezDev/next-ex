@@ -53,7 +53,7 @@ const Homepage = () => (
             </p>
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
-            <Image rounded size="large" src="https://browardcollegeblog.com/wp-content/uploads/2015/10/ETS_TOEFL_Authorized_Test_Center.jpg" />
+            <Image rounded size="large" src="http://www.certificates-for-immigration.com/wp-content/uploads/2019/01/toefl-sec-2.jpg" />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>

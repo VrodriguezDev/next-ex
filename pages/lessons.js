@@ -18,21 +18,9 @@ import {
   LessonMenuButton
 } from '../components/lesson/lessonComponents';
 
-const textTabMenuItem = value => (
-  {
-    key: value,
-    icon: 'file text',
-    content: value
-  }
-);
+const textTabMenuItem = value => ({ key: value, icon: 'file text', content: value });
 
-const videoTabMenuItem = value => (
-  {
-    key: value,
-    icon: 'film',
-    content: value
-  }
-);
+const videoTabMenuItem = value => ({ key: value, icon: 'film', content: value });
 
 const less1content = () => (
   <Container text style={{ height: '500px' }}>
@@ -57,7 +45,7 @@ const less1content = () => (
 );
 
 const less2content = () => (
-  <Container text style={{ height: '500px' }}>
+  <Container text style={{ minHeight: '300px' }}>
     <Header as="h2">Lesson 2 Overview</Header>
     <Header as="h4">Part One</Header>
     <p>
