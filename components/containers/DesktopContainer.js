@@ -19,21 +19,21 @@ class DesktopContainer extends Component {
     this.state = {
       fixed: false
     };
+    this.hideFixedMenu = this.hideFixedMenu.bind(this);
+    this.showFixedMenu = this.showFixedMenu.bind(this);
   }
 
-  // hideFixedMenu() {
-  //   this.setState({ fixed: false });
-  // }
+  hideFixedMenu() {
+    this.setState({ fixed: false });
+  }
 
-  // showFixedMenu() {
-  //   this.setState({ fixed: true });
-  // }
+  showFixedMenu() {
+    this.setState({ fixed: true });
+  }
 
   render() {
-    const { children } = this.props;
+    const { children, getWidth, renderHeading } = this.props;
     const { fixed } = this.state;
-    const { getWidth } = this.props;
-    const { renderHeading } = this.props;
     const height = renderHeading ? 550 : 80;
 
     return (
@@ -52,9 +52,9 @@ class DesktopContainer extends Component {
           >
             <Menu
               inverted
+              color={fixed ? 'blue' : 'white'}
               fixed={fixed ? 'top' : null}
-              pointing={!fixed}
-              secondary={!fixed}
+              secondary
               size="large"
             >
               <Container>
@@ -69,7 +69,7 @@ class DesktopContainer extends Component {
                   </Link>
                 </Menu.Item>
                 <Menu.Item>
-                  <Link href="/lessons" as="/lessons">
+                  <Link href="/course" as="/course">
                     <a>Practice</a>
                   </Link>
                 </Menu.Item>
@@ -80,12 +80,12 @@ class DesktopContainer extends Component {
                 </Menu.Item>
                 <Menu.Item position="right">
                   <Link href="/signin" as="/signin">
-                    <Button as="a" inverted={fixed} color="blue">
+                    <Button as="a" color="blue">
                           Sign in
                     </Button>
                   </Link>
                   <Link href="/signup" as="/signup">
-                    <Button as="a" inverted={fixed} style={{ marginLeft: '0.5em' }}>
+                    <Button as="a" style={{ marginLeft: '0.5em' }}>
                           Sign up
                     </Button>
                   </Link>

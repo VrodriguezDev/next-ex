@@ -19,6 +19,10 @@ app
       app.render(req, res, '/lessons', req.query)
     ));
 
+    server.get('/course', (req, res) => (
+      app.render(req, res, '/course', req.query)
+    ));
+
     server.get('*', (req, res) => handle(req, res));
 
     server.listen(3000, (err) => {
