@@ -10,38 +10,51 @@ import {
 } from 'semantic-ui-react';
 import ResponsiveContainer from '../components/containers/ResponsiveContainer';
 
+const defaultPanels = [
+  { key: 'text', title: 'Lesson Summary', icon: 'file alternate outline', content: 'Summary of the selected lesson' },
+  { key: 'video', title: 'Video Lesson', icon: 'file video outline', content: 'Description of the video' },
+];
+
+const defaultSubLesson = (
+  <Accordion.Accordion inverted exclusive panels={defaultPanels} />
+);
+
 const lessonsArray = [
   {
     key: 'lessonOne',
     title: 'Lesson One',
     content: 'Lesson One overview and description',
-    subLesson: ''
+    subLesson: defaultSubLesson
   },
   {
     key: 'lessonTwo',
     title: 'Lesson Two',
     content: 'Lesson Two overview and description',
-    subLesson: ''
+    subLesson: defaultSubLesson
   },
   {
     key: 'lessonThree',
     title: 'Lesson Three',
     content: 'Lesson Three overview and description',
-    subLesson: ''
+    subLesson: defaultSubLesson
   }
 ];
 
-const LessonComp = ({ lesson, activeLessonKey, updateActiveKeyFunc }) => (
-  <div>
-    <Accordion.Title active={lesson.key === activeLessonKey} onClick={() => updateActiveKeyFunc(lesson.key)}>
-      <Icon name="dropdown" />
-      {lesson.title}
-    </Accordion.Title>
-    <Accordion.Content active={lesson.key === activeLessonKey}>
-      <p>{lesson.content}</p>
-    </Accordion.Content>
-  </div>
-);
+const LessonComp = ({ lesson, activeLessonKey, updateActiveKeyFunc }) => {
+  const isActive = lesson.key === activeLessonKey;
+  return (
+    <Container text>
+      <Accordion.Title active={isActive} onClick={() => updateActiveKeyFunc(lesson.key)}>
+        <Icon name="dropdown" />
+        {lesson.title}
+      </Accordion.Title>
+      <Accordion.Content active={isActive}>
+        <p>{lesson.content}</p>
+        {lesson.subLesson}
+      </Accordion.Content>
+    </Container>
+  );
+};
 
 const generateLessons = (lessons, activeLessonKey, handleClickFunc) => {
   const lessonComps = [];
@@ -98,7 +111,7 @@ class LessonsList extends Component {
 export default function Course() {
   return (
     <ResponsiveContainer renderHeading={false}>
-      <Container style={{ paddingTop: '1em' }}>
+      <Container text style={{ paddingTop: '1em' }}>
         <Header as="h2" floating inverted attached="top">Course Overview</Header>
         <LessonsList lessons={lessonsArray} />
       </Container>

@@ -52,7 +52,7 @@ class DesktopContainer extends Component {
           >
             <Menu
               inverted
-              color={fixed ? 'blue' : 'white'}
+              color='blue'
               fixed={fixed ? 'top' : null}
               secondary
               size="large"

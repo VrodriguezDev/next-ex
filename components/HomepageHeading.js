@@ -16,7 +16,7 @@ const HomepageHeading = ({ mobile, renderHeading }) => {
     <Container text>
       <Image
         size="large"
-        src="../static/img/white-logo-small.png"
+        src="../img/white-logo-small.png"
         style={{ marginLeft: '1.8em' }}
       />
       <Header

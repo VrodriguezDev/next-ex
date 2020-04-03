@@ -22,5 +22,6 @@ module.exports = {
     "comma-dangle":0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope" : false,
+    "object-curly-newline" : "never"
   }
 };
