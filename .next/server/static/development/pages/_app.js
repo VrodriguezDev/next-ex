@@ -105,8 +105,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MyApp; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _public_semantic_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../public/semantic.min.css */ "./public/semantic.min.css");
-/* harmony import */ var _public_semantic_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_public_semantic_min_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _semantic_dist_semantic_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../semantic/dist/semantic.min.css */ "./semantic/dist/semantic.min.css");
+/* harmony import */ var _semantic_dist_semantic_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_semantic_dist_semantic_min_css__WEBPACK_IMPORTED_MODULE_1__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  // This default export is required in a new `pages/_app.js` file.
@@ -120,10 +120,10 @@ function MyApp({
 
 /***/ }),
 
-/***/ "./public/semantic.min.css":
-/*!*********************************!*\
-  !*** ./public/semantic.min.css ***!
-  \*********************************/
+/***/ "./semantic/dist/semantic.min.css":
+/*!****************************************!*\
+  !*** ./semantic/dist/semantic.min.css ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

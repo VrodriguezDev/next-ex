@@ -1,4 +1,4 @@
-import '../public/semantic.min.css'
+import '../semantic/dist/semantic.min.css'
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {

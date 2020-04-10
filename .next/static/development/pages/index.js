@@ -49535,7 +49535,7 @@ function Main() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5Cprojects%5Cnext-ex%5Cpages%5Cindex.js ***!
   \*************************************************************************************************************/
@@ -49558,5 +49558,5 @@ module.exports = dll_b919ee6c3f90c44aab90;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

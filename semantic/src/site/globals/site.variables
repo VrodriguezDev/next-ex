@@ -6,12 +6,12 @@
      Fonts
 --------------------*/
 
-@headerFont        : 'Varela Round';
-@pageFont          : 'Lato', 'Open Sans', Arial, Helvetica, sans-serif;
+@headerFont        : 'Open Sans';
+@pageFont          : 'Open Sans', Arial, Helvetica, sans-serif;
 @fontSmoothing     : antialiased;
 
 @importGoogleFonts : true;
-@googleFontName    : 'Varela Round';
+@googleFontName    : 'Open Sans';
 @googleFontSizes   : '400,700,400italic,700italic';
 @googleFontFamily  : '@{googleFontName}:@{googleFontSizes}';
 
