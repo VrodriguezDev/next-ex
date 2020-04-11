@@ -13,7 +13,7 @@ const SignInLayout = () => (
   <Grid textAlign="center" style={{ height: '100vh' }} verticalAlign="middle">
     <Grid.Column style={{ maxWidth: 450 }}>
       <Header as="h2" color="blue" textAlign="center">
-        <Image src="../static/img/logo-small.png" style={{ padding: '5px' }} /> Log-in to your account
+        <Image src="../img/logo-small.png" style={{ padding: '5px' }} /> Log-in to your account
       </Header>
       <Form size="large">
         <Segment stacked>
