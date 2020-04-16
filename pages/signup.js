@@ -14,21 +14,32 @@ import {
 
 const SignUpLayout = () => {
   const [user, { mutate }] = useUser();
-  const [, setErrorMsg] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
     // redirect to home if user is authenticated
+    console.log("User already logged in: ");
+    console.log(user);
     if (user) Router.replace('/');
   }, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("handling submit");
+    let password = e.currentTarget.password.value;
+    let confPassword = e.currentTarget.confPassword.value;
+    if(password != confPassword) {
+      setErrorMsg("Passwords don't match!");
+      return;
+    }
+    
     const body = {
       email: e.currentTarget.email.value,
       name: e.currentTarget.name.value,
+      lastname: e.currentTarget.lastname.value,
       password: e.currentTarget.password.value,
     };
+
     const res = await fetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -52,24 +63,27 @@ const SignUpLayout = () => {
         <Image src="../img/logo-med.png" style={{ padding: '5px' }} /> Create an account
       </Header>
       <Form size="large" onSubmit={handleSubmit}>
+        {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
         <Segment stacked>
           <Form.Input id="email" fluid icon="user" iconPosition="left" placeholder="E-mail address" />
           <Form.Input id="name" fluid placeholder="First name" />
-          <Form.Input id="password" fluid placeholder="Last name" />
+          <Form.Input id="lastname" fluid placeholder="Last name" />
           <Form.Input
+            id="password"
             fluid
             icon="lock"
             iconPosition="left"
             placeholder="Password"
             type="password"
           />
-          {/* <Form.Input
+          <Form.Input
+            id="confPassword"
             fluid
             icon="lock"
             iconPosition="left"
             placeholder="Confirm password"
             type="password"
-          /> */}
+          />
           <Button type="submit" color="red" fluid size="large">Sign Up</Button>
         </Segment>
       </Form>

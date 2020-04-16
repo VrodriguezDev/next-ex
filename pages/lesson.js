@@ -12,7 +12,7 @@ import {
 } from 'semantic-ui-react';
 import ResponsiveContainer from '../components/containers/ResponsiveContainer';
 import {
-  LessonNavReveal,
+  RegularLessonNav,
   LessonTabs,
   LessonTab,
   LessonMenuButton
@@ -113,7 +113,7 @@ const lesson3 = {
 
 const lessonsArray = [lesson1, lesson2, lesson3];
 
-class Lesson extends Component {
+class LessonClass extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -148,8 +148,8 @@ class Lesson extends Component {
                 <Grid.Column width={1} style={{ paddingRight: 0 }}>
                   <LessonMenuButton />
                 </Grid.Column>
-                <Grid.Column width={2} stretched>
-                  <LessonNavReveal direction="left" navFunc={this.prevLesson} />
+                <Grid.Column width={2}>
+                  <RegularLessonNav direction="left" navFunc={this.prevLesson} />
                 </Grid.Column>
                 <Grid.Column width={11} inverted color="red" verticalAlign="middle" style={{ borderRadius: 5 }}>
                   <Header inverted as="h2">
@@ -157,8 +157,8 @@ class Lesson extends Component {
                     <Header.Subheader>{lesson.description}</Header.Subheader>
                   </Header>
                 </Grid.Column>
-                <Grid.Column width={2} stretched>
-                  <LessonNavReveal direction="right" navFunc={this.nextLesson} />
+                <Grid.Column width={2}>
+                  <RegularLessonNav direction="right" navFunc={this.nextLesson} />
                 </Grid.Column>
               </Grid.Row>
             </Grid>
@@ -175,7 +175,7 @@ class Lesson extends Component {
 export default function Lessons() {
   return (
     <ResponsiveContainer renderHeading={false}>
-      <Lesson lessonsList={lessonsArray} />
+      <LessonClass lessonsList={lessonsArray} />
     </ResponsiveContainer>
   );
 }

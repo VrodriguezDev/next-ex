@@ -101,7 +101,7 @@ class LessonsList extends Component {
     const { lessons } = this.props;
     const { activeLessonKey } = this.state;
     return (
-      <Accordion styled fluid>
+      <Accordion styled fluid inverted>
         {generateLessons(lessons, activeLessonKey, this.handleClick)}
       </Accordion>
     );
@@ -112,7 +112,7 @@ export default function Course() {
   return (
     <ResponsiveContainer renderHeading={false}>
       <Container text style={{ paddingTop: '1em' }}>
-        <Header as="h2" floating inverted attached="top">Course Overview</Header>
+        <Header as="h2" floating attached="top">Course Overview</Header>
         <LessonsList lessons={lessonsArray} />
       </Container>
     </ResponsiveContainer>

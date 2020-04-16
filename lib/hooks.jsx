@@ -9,3 +9,11 @@ export function useUser() {
   const user = data && data.user;
   return [user, { mutate }];
 }
+
+export function useLesson(lessonId) {
+  const { data, mutate } = useSWR('/api/lesson?lessonId='+lessonId, fetcher);
+  console.log("fetching lesson: lessonId = "+lessonId);
+  console.log(data);
+  const lesson = data && data.lesson;
+  return [lesson, { mutate }];
+}
