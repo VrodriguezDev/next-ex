@@ -3,37 +3,116 @@ import {
   Container,
   Header,
   Segment,
-  Grid
+  Grid,
+  Icon,
+  Tab
 } from 'semantic-ui-react';
 import ResponsiveContainer from '../../components/containers/ResponsiveContainer';
 import {
   RegularLessonNav,
-  LessonMenuButton
+  LessonMenuButton,
+  LessonTabs,
+  LessonTab,
+  TextTabContent,
+  VideoTabContent,
+  ReadingTabContent
 } from './lessonComponents';
 import { useLesson } from '../../lib/hooks';
 
 const textTabMenuItem = value => ({ key: value, icon: 'file text', content: value });
-
 const videoTabMenuItem = value => ({ key: value, icon: 'film', content: value });
+const readingTabMenuItem = (value, completed) => (
+  {
+    key: value,
+    icon: completed ? <Icon name="book" color="green" /> : 'book',
+    content: value});
+
+const tabMenuItem = (lessonTab) => {
+  const { tabType, tabTitle, completed } = lessonTab;
+  switch (tabType) {
+    case 'text':
+      return textTabMenuItem(tabTitle);
+    case 'video':
+      return videoTabMenuItem(tabTitle);
+    case 'reading':
+      return readingTabMenuItem(tabTitle, completed);
+    default:
+      return (
+        { key: value, content: value }
+      );
+  }
+};
+
+const generateTabContent = (tabType, tabContent) => {
+  switch (tabType) {
+    case 'text':
+      return (
+        <TextTabContent tabContent={tabContent} />
+      );
+    case 'video':
+      return (
+        <VideoTabContent tabContent={tabContent} />
+      );
+    case 'reading':
+      return (
+        <ReadingTabContent tabContent={tabContent} />
+      );
+    default:
+      return (
+        <Tab.Pane>Tab Content</Tab.Pane>
+      );
+  }
+};
+
+const generatePanes = (lessonTabs) => {
+  let panes = [];
+  lessonTabs.forEach(lessonTab => {
+    const { tabType, tabContent } = lessonTab;
+    panes.push(
+      { 
+        menuItem: tabMenuItem(lessonTab),
+        render: () => <LessonTab tabType={tabType} content={generateTabContent(tabType, tabContent)} />
+      }
+    );
+  });
+  return panes;
+};
+
+const generateLesson = (lessonData) => {
+  const { title, description, lessonTabs } = lessonData;
+  const lesson = {
+    title: title,
+    description: description,
+    panes: generatePanes(lessonTabs)
+  };
+  return lesson;
+};
 
 const emptyLesson = {
-  lessonId: 9999,
+  lessonId: 0,
   title: "Emtpy title",
   description: "Empty description",
+  lessonTabs: [
+    {
+      tabType: "text",
+      tabTitle: "Empty Lesson Tab",
+      tabContent: {
+        title: "Empty Lesson",
+        subtitle: "-",
+        content: "-"
+      }
+    }
+  ]
 
 };
 
 const LessonPage = ({ lessonId }) => {
-  console.log("lessonId from route: " + lessonId);
   const [lessonData, { mutate }] = useLesson(lessonId);
-  const [lesson, setLesson] = useState(emptyLesson);
+  const [lesson, setLesson] = useState(generateLesson(emptyLesson));
 
   useEffect(()=>{
     if(lessonData) {
-      console.log("loading lesson...");
-      setLesson(lessonData);
-      console.log("Got lesson: ");
-      console.log(lesson);
+      setLesson(generateLesson(lessonData));
     }
   }, [lessonData]);
   return(
@@ -56,7 +135,7 @@ const LessonContent = ({ lesson }) => {
               <Grid.Column width={2}>
                 <RegularLessonNav direction="left" navFunc={prevLesson} />
               </Grid.Column>
-              <Grid.Column width={11} inverted color="red" verticalAlign="middle" style={{ borderRadius: 5 }}>
+              <Grid.Column width={11} color="red" verticalAlign="middle" style={{ borderRadius: 5 }}>
                 <Header inverted as="h2">
                   <b>{lesson.title}</b>
                   <Header.Subheader>{lesson.description}</Header.Subheader>
@@ -69,7 +148,7 @@ const LessonContent = ({ lesson }) => {
           </Grid>
         </Segment>
         <Segment vertical secondary style={{ border: 0 }}>
-          {/* <LessonTabs lesson={lesson} /> */}
+          <LessonTabs lesson={lesson} />
         </Segment>
       </Segment.Group>
     </Container>

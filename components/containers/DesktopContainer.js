@@ -27,7 +27,7 @@ const SignInSignUpSection = ({user, updateUser}) => {
     return (
       <Menu.Item position="right">
         <Link href="">
-          <p>{name}, {email}</p>
+          <p>{name}, {email}    </p>
         </Link>
         <Button secondary compact size="small" onClick={logout}>Log Out</Button>
       </Menu.Item>

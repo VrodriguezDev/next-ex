@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable import/prefer-default-export */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Button,
   Icon,
@@ -10,9 +10,9 @@ import {
   Header,
   Embed,
   Form,
+  Radio,
   TextArea,
   Container,
-  Menu,
   Dropdown
 } from 'semantic-ui-react';
 
@@ -122,7 +122,7 @@ const VideoLessonTabPane = ({ content }) => (
           {content.title}
           <Header.Subheader>Pay attention to the video and take notes if you want</Header.Subheader>
         </Header>
-        <Embed id={content.videoId} placeholder="../../static/img/logo-med.png" source="vimeo" defaultActive="true" />
+        <Embed id='188171839' placeholder="../../img/logo-med.png" source="vimeo" defaultActive={true} />
       </Segment>
       <Segment vertical>
         <Header as="h2">Notes</Header>
@@ -134,6 +134,101 @@ const VideoLessonTabPane = ({ content }) => (
   </LessonTabPane>
 );
 
+const ReadingLessonTabPane = ({ tabContent }) => {
+
+  const [question1Value, setQuestion1Value] = useState('');
+  const [question2Value, setQuestion2Value] = useState('');
+ 
+  return (
+    <LessonTabPane>
+      <Container text style={{ height: '500px' }}>
+        <Header as="h2">Reading Quiz</Header>
+        <Form.Field>Read the following text then answer the questions below</Form.Field>
+        <Segment raised>
+          Pellentesque habitant morbi tristique senectus.
+          Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus.
+          Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus.
+          Pellentesque habitant morbi tristique senectus.
+          Pellentesque habitant morbi tristique senectus.
+          Pellentesque habitant morbi tristique senectus.
+          Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus.
+        </Segment>
+        <Form>
+        <Form.Field>
+          Question 1:
+        </Form.Field>
+        <Form.Field>
+          <Radio
+            label='Choose this'
+            name='radioGroup'
+            value='this'
+            checked={question1Value === 'this'}
+            onChange={() => setQuestion1Value('this')}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Radio
+            label='Or that'
+            name='radioGroup'
+            value='that'
+            checked={question1Value === 'that'}
+            onChange={() => setQuestion1Value('that')}
+          />
+        </Form.Field>
+        <Form.Field>
+          Question 2:
+        </Form.Field>
+        <Form.Field>
+          <Radio
+            label='Option a'
+            name='radioGroup2'
+            value='a'
+            checked={question2Value === 'a'}
+            onChange={() => setQuestion2Value('a')}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Radio
+            label='Option b'
+            name='radioGroup2'
+            value='b'
+            checked={question2Value === 'b'}
+            onChange={() => setQuestion2Value('b')}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Radio
+            label='Option c'
+            name='radioGroup2'
+            value='c'
+            checked={question2Value === 'c'}
+            onChange={() => setQuestion2Value('c')}
+          />
+        </Form.Field>
+      </Form>
+      </Container>
+    </LessonTabPane>
+  );
+};
+
+export const TextTabContent = ({ tabContent }) => (
+  <Container text style={{ height: '500px' }}>
+    <Header as="h2">{tabContent.title}</Header>
+    <Header as="h4">{tabContent.subtitle}</Header>
+    <p>
+      {tabContent.content}
+    </p>
+  </Container>
+);
+
+export const VideoTabContent = ({ tabContent }) => {
+  return { title: tabContent.tabTitle, videoId: '188171839' };
+};
+
+export const ReadingTabContent = ({ tabContent }) => {
+  return { tabContent: tabContent };
+}
+
 export const LessonTab = ({ tabType, content }) => {
   switch (tabType) {
     case 'text':
@@ -143,6 +238,10 @@ export const LessonTab = ({ tabType, content }) => {
     case 'video':
       return (
         <VideoLessonTabPane content={content} />
+      );
+    case 'reading':
+      return (
+        <ReadingLessonTabPane content={content} />
       );
     default:
       return (
