@@ -5,7 +5,10 @@ import {
   Segment,
   Grid,
   Icon,
-  Tab
+  Tab,
+  Dimmer,
+  Loader,
+  Image
 } from 'semantic-ui-react';
 import ResponsiveContainer from '../../components/containers/ResponsiveContainer';
 import {
@@ -109,13 +112,26 @@ const emptyLesson = {
 const LessonPage = ({ lessonId }) => {
   const [lessonData, { mutate }] = useLesson(lessonId);
   const [lesson, setLesson] = useState(generateLesson(emptyLesson));
+  const [loaded, isLoaded] = useState(false);
 
   useEffect(()=>{
     if(lessonData) {
       setLesson(generateLesson(lessonData));
+      isLoaded(true);
     }
   }, [lessonData]);
-  return(
+  if(!loaded) {
+    return (
+    <Container text>
+      <Segment>
+        <Dimmer active inverted>
+          <Loader>Loading</Loader>
+        </Dimmer>
+        <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+      </Segment>
+    </Container>
+    );
+  } else return(
     <LessonContent lesson={lesson}/>
   );
 }

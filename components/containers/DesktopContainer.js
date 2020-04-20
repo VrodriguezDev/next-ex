@@ -92,13 +92,13 @@ const DesktopContainer = ({children, getWidth, renderHeading }) => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href="/lesson" as="/lesson">
-                  <a>Lesson</a>
+                <Link href="/courses/courseone" as="/courses/courseone">
+                  <a>Course</a>
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href="/course" as="/course">
-                  <a>Practice</a>
+                <Link href="/lesson" as="/lesson">
+                  <a>Lesson</a>
                 </Link>
               </Menu.Item>
               <Menu.Item>
