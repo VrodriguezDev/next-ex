@@ -39,7 +39,7 @@ const getNavigationParams = (direction) => {
 export const LessonNavigationButton = ({ dirParams, navFunc }) => (
   <Button
     fluid
-    color="black"
+    color='black'
     icon
     onClick={navFunc}
   >
@@ -90,7 +90,7 @@ export const RegularLessonNav = ({ direction, navFunc }) => {
 export const ButtonWithReveal = ({ direction, navFunc }) => {
   const dirParams = getNavigationParams(direction);
   return (
-    <Button animated color="black">
+    <Button animated color='black'>
       <Button.Content visible>
         <Icon name={dirParams.icon} inverted/>
       </Button.Content>
@@ -118,11 +118,11 @@ const VideoLessonTabPane = ({ content }) => (
   <LessonTabPane>
     <Container text>
       <Segment vertical padded>
-        <Header as="h2">
+        <Header as='h2'>
           {content.title}
           <Header.Subheader>Pay attention to the video and take notes if you want</Header.Subheader>
         </Header>
-        <Embed id='188171839' placeholder="../../img/logo-med.png" source="vimeo" defaultActive={true} />
+        <Embed id='188171839' placeholder="../../img/logo-med.png" source='vimeo' defaultActive={true} />
       </Segment>
       <Segment vertical>
         <Header as="h2">Notes</Header>
@@ -142,7 +142,7 @@ const ReadingLessonTabPane = ({ tabContent }) => {
   return (
     <LessonTabPane>
       <Container text style={{ height: '500px' }}>
-        <Header as="h2">Reading Quiz</Header>
+        <Header as='h2'>Reading Quiz</Header>
         <Form.Field>Read the following text then answer the questions below</Form.Field>
         <Segment raised>
           Pellentesque habitant morbi tristique senectus.

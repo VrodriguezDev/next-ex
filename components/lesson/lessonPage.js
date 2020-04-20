@@ -24,7 +24,7 @@ const videoTabMenuItem = value => ({ key: value, icon: 'film', content: value })
 const readingTabMenuItem = (value, completed) => (
   {
     key: value,
-    icon: completed ? <Icon name="book" color="green" /> : 'book',
+    icon: completed ? <Icon name='book' color='green' /> : 'book',
     content: value});
 
 const tabMenuItem = (lessonTab) => {
@@ -94,7 +94,7 @@ const emptyLesson = {
   description: "Empty description",
   lessonTabs: [
     {
-      tabType: "text",
+      tabType: 'text',
       tabTitle: "Empty Lesson Tab",
       tabContent: {
         title: "Empty Lesson",
@@ -133,16 +133,16 @@ const LessonContent = ({ lesson }) => {
                 <LessonMenuButton />
               </Grid.Column>
               <Grid.Column width={2}>
-                <RegularLessonNav direction="left" navFunc={prevLesson} />
+                <RegularLessonNav direction='left' navFunc={prevLesson} />
               </Grid.Column>
-              <Grid.Column width={11} color="red" verticalAlign="middle" style={{ borderRadius: 5 }}>
-                <Header inverted as="h2">
+              <Grid.Column width={11} color='red' verticalAlign='middle' style={{ borderRadius: 5 }}>
+                <Header inverted as='h2'>
                   <b>{lesson.title}</b>
                   <Header.Subheader>{lesson.description}</Header.Subheader>
                 </Header>
               </Grid.Column>
               <Grid.Column width={2}>
-                <RegularLessonNav direction="right" navFunc={nextLesson} />
+                <RegularLessonNav direction='right' navFunc={nextLesson} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
