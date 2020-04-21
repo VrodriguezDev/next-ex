@@ -18,7 +18,8 @@ import {
   LessonTab,
   TextTabContent,
   VideoTabContent,
-  ReadingTabContent
+  ReadingTabContent,
+  WritingTabContent
 } from './lessonComponents';
 import { useLesson } from '../../lib/hooks';
 
@@ -28,7 +29,16 @@ const readingTabMenuItem = (value, completed) => (
   {
     key: value,
     icon: completed ? <Icon name='book' color='green' /> : 'book',
-    content: value});
+    content: value
+  }
+);
+const writingTabMenuItem = (value, completed) => (
+  {
+    key: value,
+    icon: completed ? <Icon name='pencil' color='green' /> : 'pencil',
+    content: value
+  }
+);
 
 const tabMenuItem = (lessonTab) => {
   const { tabType, tabTitle, completed } = lessonTab;
@@ -39,6 +49,8 @@ const tabMenuItem = (lessonTab) => {
       return videoTabMenuItem(tabTitle);
     case 'reading':
       return readingTabMenuItem(tabTitle, completed);
+    case 'writing':
+      return writingTabMenuItem(tabTitle, completed);
     default:
       return (
         { key: value, content: value }
@@ -59,6 +71,10 @@ const generateTabContent = (tabType, tabContent) => {
     case 'reading':
       return (
         <ReadingTabContent tabContent={tabContent} />
+      );
+    case 'writing':
+      return (
+        <WritingTabContent tabContent={tabContent} />
       );
     default:
       return (
@@ -125,8 +141,9 @@ const LessonPage = ({ lessonId }) => {
     <Container text>
       <Segment>
         <Dimmer active inverted>
-          <Loader>Loading</Loader>
+          <Loader size='huge'>Loading</Loader>
         </Dimmer>
+        <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
         <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
       </Segment>
     </Container>

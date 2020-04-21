@@ -137,8 +137,36 @@ const VideoLessonTabPane = ({ content }) => (
 const ReadingLessonTabPane = ({ tabContent }) => {
 
   const [question1Value, setQuestion1Value] = useState('');
+  const [q1error, setQ1Error] = useState('');
   const [question2Value, setQuestion2Value] = useState('');
- 
+  const [q2error, setQ2Error] = useState('');
+  const [missingAnswers, setMissingAnswers] = useState(true);
+  const [errorFields, setErrorFields] = useState([]);
+
+  useEffect(() => {
+    setMissingAnswers(question1Value === '' || question2Value === '');
+  }, [question1Value, question2Value]);
+
+  useEffect(() => {
+
+  }, [q1error, q2error]);
+
+  const checkForError = (fieldName, error) => {
+    console.log(error)
+    console.log(fieldName)
+    return error && fieldName === error;
+  }
+
+  const reviewQuiz = () => {
+    console.log("reviewing...")
+    if(question1Value != "that") {
+      setQ1Error(question1Value);
+    }
+    if(question2Value != "a") {
+      setQ2Error(question2Value);
+    }
+  };
+  
   return (
     <LessonTabPane>
       <Container text style={{ height: '500px' }}>
@@ -158,7 +186,7 @@ const ReadingLessonTabPane = ({ tabContent }) => {
           Question 1:
         </Form.Field>
         <Form.Field>
-          <Radio
+          <Form.Radio
             label='Choose this'
             name='radioGroup'
             value='this'
@@ -167,7 +195,7 @@ const ReadingLessonTabPane = ({ tabContent }) => {
           />
         </Form.Field>
         <Form.Field>
-          <Radio
+          <Form.Radio
             label='Or that'
             name='radioGroup'
             value='that'
@@ -179,7 +207,7 @@ const ReadingLessonTabPane = ({ tabContent }) => {
           Question 2:
         </Form.Field>
         <Form.Field>
-          <Radio
+          <Form.Radio
             label='Option a'
             name='radioGroup2'
             value='a'
@@ -188,7 +216,7 @@ const ReadingLessonTabPane = ({ tabContent }) => {
           />
         </Form.Field>
         <Form.Field>
-          <Radio
+          <Form.Radio
             label='Option b'
             name='radioGroup2'
             value='b'
@@ -197,7 +225,7 @@ const ReadingLessonTabPane = ({ tabContent }) => {
           />
         </Form.Field>
         <Form.Field>
-          <Radio
+          <Form.Radio
             label='Option c'
             name='radioGroup2'
             value='c'
@@ -205,7 +233,27 @@ const ReadingLessonTabPane = ({ tabContent }) => {
             onChange={() => setQuestion2Value('c')}
           />
         </Form.Field>
+        <Form.Button primary size='large' floated='right' disabled={missingAnswers} onClick={reviewQuiz}>Submit</Form.Button>
       </Form>
+      </Container>
+    </LessonTabPane>
+  );
+};
+
+const WritingLessonTabPane = ({ tabContent }) => {
+  return (
+    <LessonTabPane>
+      <Container text style={{ height: '500px' }}>
+        <Header as='h2'>Writing Quiz</Header>
+        <Form.Field>Consider the following topic then write a paragraph (+100 words) with your thougts about it </Form.Field>
+        <Segment raised>
+        <strong>Topic 1: </strong>Pellentesque habitant morbi tristique senectus.
+          Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus.
+          Pellentesque habitant morbi tristique senectus.
+        </Segment>
+        <Form.Field>Type your response here:</Form.Field>
+        <Form.TextArea rows='5'/>
+        <Form.Button primary size='large' floated='right' disabled>Submit</Form.Button>
       </Container>
     </LessonTabPane>
   );
@@ -229,6 +277,10 @@ export const ReadingTabContent = ({ tabContent }) => {
   return { tabContent: tabContent };
 }
 
+export const WritingTabContent = ({ tabContent }) => {
+  return { tabContent: tabContent };
+}
+
 export const LessonTab = ({ tabType, content }) => {
   switch (tabType) {
     case 'text':
@@ -242,6 +294,10 @@ export const LessonTab = ({ tabType, content }) => {
     case 'reading':
       return (
         <ReadingLessonTabPane content={content} />
+      );
+    case 'writing':
+      return (
+        <WritingLessonTabPane content={content} />
       );
     default:
       return (

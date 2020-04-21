@@ -1,7 +1,8 @@
 import { MongoClient } from 'mongodb';
 import nextConnect from 'next-connect';
 
-const client = new MongoClient('mongodb+srv://mrtAdmin:Mrtdmn321%2B@mrtcluster-8mmx8.mongodb.net/test?authSource=admin&replicaSet=MRTCluster-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true', {
+const uri = 'mongodb+srv://mrtAdmin:Mrtdmn321%2B@mrtcluster-8mmx8.mongodb.net/test?retryWrites=true&w=majority';
+const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
