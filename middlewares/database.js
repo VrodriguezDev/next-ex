@@ -1,8 +1,8 @@
 import { MongoClient } from 'mongodb';
 import nextConnect from 'next-connect';
 
-const uri = 'process.env.MONGODB_URI';
-const client = new MongoClient(process.env.MONGODB_URI, {
+const uri = 'mongodb+srv://mrtAdmin:Mrtdmn321%2B@mrtcluster-8mmx8.mongodb.net/test?retryWrites=true&w=majority';
+const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
