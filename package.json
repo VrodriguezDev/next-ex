@@ -18,7 +18,7 @@
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^3.2.0",
     "cross-env": "^5.2.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "find-cache-dir": "^3.3.1",
     "gulp": "^4.0.2",
     "mongodb": "^3.5.5",
